@@ -28,12 +28,12 @@ const theme = extendTheme({colors});
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/network" element={<Network />} />
+    <Route path="/InusulaConsult/" element={<App />}>
+      <Route path="/InsulaConsult/" element={<Home />} />
+      <Route path="/InsulaConsult/about" element={<About />} />
+      <Route path="/InsulaConsult/services" element={<Services />} />
+      <Route path="InsulaConsult/projects" element={<Projects />} />
+      <Route path="InsulaConsult/network" element={<Network />} />
     </Route>
   )
 );
