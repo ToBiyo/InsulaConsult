@@ -23,10 +23,10 @@ export const Home = () => {
     w: "100vw",
     height: "auto",
     flexDir: "column",
+    bgImage : `url(${home})`, 
+    bgAttachment : "fixed"
   };
   const background = {
-    bgImage: `url(${home})`,
-    bgAttachment: "fixed",
   };
 
   const stacco = {
@@ -93,7 +93,7 @@ export const Home = () => {
     <Flex sx={container}>
       <header>
         <TextSection
-          src={home}
+         
           h={"h1"}
           heading={"home_head_title"}
           text={"home_head_description"}
@@ -106,7 +106,7 @@ export const Home = () => {
           {/* <CardsSection section={"services"} heading={t("service_heading")}>
             <NavigationButtons path={"/services"} />
           </CardsSection> */}
-          <Flex sx={backgroundImg}>
+          <Flex >
             <Flex sx={staccoTransparent}>
               <Heading fontSize={"4rem"} color={"orange.400"}>
                 Progetti
@@ -154,7 +154,7 @@ export const Home = () => {
         </section>
         <section>
           <TextSection
-            src={about}
+           
             h={"h2"}
             heading={"about_heading"}
             text={"about_description"}
@@ -212,7 +212,7 @@ export const Home = () => {
         </Flex>
         <section>
           <TextSection
-            src={network}
+            
             h={"h2"}
             heading={"network_heading"}
             text={"network_description"}
