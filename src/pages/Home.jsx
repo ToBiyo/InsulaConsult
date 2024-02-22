@@ -58,6 +58,7 @@ export const Home = () => {
     position: "relative",
     borderRadius: "50%",
     marginBottom: "30px",
+    border : "3px solid orange"
   };
   const logo = {
     width: "150px",
