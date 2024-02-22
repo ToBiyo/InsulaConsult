@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Flex, Heading, Image, Text, Button } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text, Box } from "@chakra-ui/react";
 import { NavigationButtons } from "../components/NavigationButtons";
 import { Footer } from "../components/Footer";
 import { TextSection } from "../components/TextSection";
@@ -32,29 +32,55 @@ export const Home = () => {
   const stacco = {
     w: "100%",
     h: "auto",
-    padding : "100px 0",
+    padding: "100px 0",
     bg: "primary",
     flexDir: "column",
     alignItems: "center",
     justifyContent: "center",
     gap: "80px",
+    borderBottom: "1px dotted #fff",
   };
   const cardContainer = {
     w: "80%",
     justifyContent: "space-around",
   };
   const card = {
-    width :  "20%",
+    width: "20%",
     flexDir: "column",
-    alignItems : "center",
-    textAlign : "center"
+    alignItems: "center",
+    textAlign: "center",
   };
   const logoContainer = {
-    h : "150px",
-    alignItems : "center"
+    w: "170px",
+    h: "170px",
+    bg: "#fff",
+    alignItems: "center",
+    position: "relative",
+    borderRadius: "50%",
+    marginBottom: "30px",
   };
   const logo = {
     width: "150px",
+    position: "absolute",
+    display: "block",
+    top: "50%" /* position the top  edge of the element at the middle of the parent */,
+    left: "50%" /* position the left edge of the element at the middle of the parent */,
+    transform: "translate(-50%, -50%)",
+  };
+  const backgroundImg = {
+    bgImage: `url(${network})`,
+    bgAttachment : "fixed"
+  };
+  const staccoTransparent = {
+    w: "100%",
+    h: "100vh",
+    padding: "100px 0",
+    bg: `linear-gradient(to left, #012d5e, rgba(255, 255, 255, 0))`,
+    flexDir: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "80px",
+    borderBottom: "1px dotted #fff",
   };
 
   useEffect(() => {
@@ -76,9 +102,54 @@ export const Home = () => {
       </header>
       <main>
         <section>
-          <CardsSection section={"services"} heading={t("service_heading")}>
+          {/* <CardsSection section={"services"} heading={t("service_heading")}>
             <NavigationButtons path={"/services"} />
-          </CardsSection>
+          </CardsSection> */}
+          <Flex sx={backgroundImg}>
+            <Flex sx={staccoTransparent}>
+              <Heading fontSize={"4rem"} color={"orange.400"}>
+                Progetti
+              </Heading>
+              <Flex sx={cardContainer}>
+                <Flex sx={card}>
+                  <Box sx={logoContainer}>
+                    <Image src={fourmLogo} sx={logo}></Image>
+                  </Box>
+                  <Text color={"#fff"} fontSize={"1.1rem"}>
+                    L'obbiettivo è promuovere l'inclusione dei giovani
+                    ipovedenti attraverso metodologie e attività sportive
+                  </Text>
+                </Flex>
+                <Flex sx={card}>
+                  <Flex sx={logoContainer} /* marginBottom={"40px"} */>
+                    <Image src={fasterLogo} sx={logo}></Image>
+                  </Flex>
+                  <Text color={"#fff"} fontSize={"1.1rem"}>
+                    L'obbiettivo è promuovere l'inclusione dei giovani
+                    ipovedenti attraverso metodologie e attività sportive
+                  </Text>
+                </Flex>
+                <Flex sx={card}>
+                  <Flex sx={logoContainer}>
+                    <Image src={gTeachLogo} sx={logo}></Image>
+                  </Flex>
+                  <Text color={"#fff"} fontSize={"1.1rem"}>
+                    L'obbiettivo è promuovere l'inclusione dei giovani
+                    ipovedenti attraverso metodologie e attività sportive
+                  </Text>
+                </Flex>
+                <Flex sx={card}>
+                  <Flex sx={logoContainer}>
+                    <Image src={cTourLogo} sx={logo}></Image>
+                  </Flex>
+                  <Text color={"#fff"} fontSize={"1.1rem"}>
+                    L'obbiettivo è promuovere l'inclusione dei giovani
+                    ipovedenti attraverso metodologie e attività sportive
+                  </Text>
+                </Flex>
+              </Flex>
+            </Flex>
+          </Flex>
         </section>
         <section>
           <TextSection
@@ -95,7 +166,7 @@ export const Home = () => {
               Progetti
             </Heading>
             <Flex sx={cardContainer}>
-            <Flex sx={card}>
+              <Flex sx={card}>
                 <Flex sx={logoContainer}>
                   <Image src={fourmLogo} sx={logo}></Image>
                 </Flex>
