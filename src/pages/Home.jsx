@@ -20,6 +20,9 @@ export const Home = () => {
     height: "auto",
     flexDir: "column",
   };
+  const background = {
+    bgImage : `url(${home})`, bgAttachment : "fixed"
+  }
 
   useEffect(() => {
     setMenuBg("none");
@@ -54,11 +57,11 @@ export const Home = () => {
           >
           </TextSection>
         </section>
-        <section>
-          <CardsSection section={"projects"} heading={t("project_heading")}>
+        <Flex as={"section"} sx={background}>
+          {/* <CardsSection section={"projects"} heading={t("project_heading")}>
             <NavigationButtons path={"/projects"} />
-          </CardsSection>
-        </section>
+          </CardsSection> */}
+        </Flex>
         <section>
           <TextSection
             src={network}

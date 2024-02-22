@@ -17,7 +17,7 @@ export const TextContent = ({heading, text, h, path, direction}) => {
         color :  "orange.400",
     }
     const txt = {
-        fontSize : '1rem',
+        fontSize : '1.1rem',
         color : "#fff",
         
         

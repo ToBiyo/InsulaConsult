@@ -101,7 +101,7 @@ export const CardsSection = ({ section, children, heading }) => {
   };
   return (
     <Flex sx={container}>
-      <SquareBackground>
+      <SquareBackground opacity={0.95}>
         <Heading sx={title}>{heading}</Heading>
         <CardsContainer>
            {section === "services" ? servicesContent : projectsContent} 

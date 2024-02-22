@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 
-export const SplitScreen = ({ children, right }) => {
+export const SplitScreen = ({ children, left }) => {
   let [leftSide, rightSide] = children;
   const container = {
     w: "100%",
@@ -13,12 +13,12 @@ export const SplitScreen = ({ children, right }) => {
   const leftPanel = {
     h : "100%",
     flex: 1,
-    order : right ? 2 : 1
+    order : left ? 2 : 1
   };
   const rightPanel = {
     h : "100%",
     flex: 1,
-    order : right ? 1 : 2
+    order : left ? 1 : 2
   };
   return (
     <Flex sx={container}>

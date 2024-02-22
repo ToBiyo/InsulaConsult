@@ -1,11 +1,11 @@
 import { Flex } from "@chakra-ui/react";
 
-export const SquareBackground = ({ children, right, width, opacity }) => {
+export const SquareBackground = ({ children, left, width, opacity, color }) => {
   
   const leftCilpPath = "polygon(0 0, 80% 0%, 100% 100%, 0% 100%)";
   const rightClipPath ="polygon(15% 0, 100% 0, 100% 100%, 0% 100%)"; 
 
-
+  //left prop allow us to switch wich side contains the skew squared background
 
   const container = {
     w: "100%",
@@ -13,19 +13,19 @@ export const SquareBackground = ({ children, right, width, opacity }) => {
     position: "relative",
     justifyContent: "center",
     alignItems : "center",
-    borderBottom :  "1px solid #fff"
+    borderBottom :  "1px dotted #fff"
   };
   const background = {
-    flex: 1.2,
+    flex: 2,
     h: "100%",
-    clipPath: right ? leftCilpPath : rightClipPath,
-    bg: "primary",
-    order : right ? 1 : 2,
+    clipPath: left ? leftCilpPath : rightClipPath,
+    bg: color ? color : "primary",
+    order : left ? 1 : 2,
     opacity : opacity ? opacity : 1  
   };
   const bgNone_container = {
-    flex : 0.8,
-    order : right ? 2 : 1
+    flex : 1,
+    order : left ? 2 : 1
 
   }
   const overlay = {
