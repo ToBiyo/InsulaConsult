@@ -13,7 +13,6 @@ export const GetInTouchBtn = () => {
     display : "flex",
     justifyContent : "center",
     alignItems : 'center',
-    justifyContent : 'center',
     padding : "0 10px",
     borderRadius : "5px",
     h: "50px",

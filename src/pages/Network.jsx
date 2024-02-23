@@ -1,18 +1,75 @@
 import { useTranslation } from "react-i18next";
-import { Flex, Heading, Image, Box } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import { TextSection } from "../components/TextSection";
-import { SquareBackground } from "../components/SquareBackground";
-import { SplitScreen } from "../layouts/SplitScreen";
+import { BackgroundImage } from "../components/BackgroundImage";
 import { Footer } from "../components/Footer";
-
+import { CardsSectionContainer } from "../components/CardsSectionContainer";
+import { CompanyCard } from "../components/CompanyCard";
+import { CollaboratorCard } from "../components/CollaboratorCard";
 //asstets
 import banner from "../assets/images/Network/banner.jpg";
-import e4b from "../assets/images/Network/e4b.png";
-import quartotempo from "../assets/images/Network/Quartotempo.webp";
+import background from "../assets/images/Network/background.jpg";
+import euro4business from "../assets/images/Network/e4b.png";
+import quartoTempo from "../assets/images/Network/Quartotempo.webp";
 import sis from "../assets/images/Network/sis.png";
-import zinev from "../assets/images/Network/zinev.png";
+import zinev from "../assets/images/Network/zinev.jpg";
+import cubufo from "../assets/images/Network/Cubufo.png";
+import coll1 from "../assets/images/Network/coll1.jpg";
+import coll2 from "../assets/images/Network/coll2.jpg";
+
 export const Network = () => {
   const { t } = useTranslation("network");
+  const companiesData = [
+    {
+      src: euro4business,
+      description: t("e_for_business_description"),
+      link: "https://www.e4business.eu/",
+    },
+    {
+      src: quartoTempo,
+      description: t("4tempo_description"),
+      link: "https://www.quartotempofirenze.it/",
+    },
+    {
+      src: sis,
+      description: t("sis_description"),
+      link: "https://sinnovations.org/",
+    },
+    {
+      src: zinev,
+      description: t("zinev_description"),
+      link: "https://zatbg.org/",
+    },
+    {
+      src: cubufo,
+      description: t("cubufo_description"),
+      link: "https://cubufo.cubufoundation.com/",
+    },
+  ];
+
+  const collaboratorsData = [
+    {
+      image: coll1,
+      name: "Arvin Eslami",
+      role: "Progettista sociale",
+      story:
+        "Laureato in Psicologia Sociale all'università di Firenze con competenze avanzate in europrogettazione, comunicazione digitale, informatica, lingue e mediazione culturale.",
+      interests:
+        "Interessato ai temi di emarginazione ed empowerment sociale, fenomeni migratori, cittadinanza europea e pensiero creativo",
+      linkedin: "https://www.linkedin.com/in/arvin-eslami/?locale=en_US ",
+    },
+    {
+      image: coll2,
+      name: "Alessandro Biscione",
+      role: "Consulente per le imprese",
+      story:
+        "Laureato in econmia dell'ambiente e sviluppo con competenze in finanza agevolata, studio bandi di finanziamento Nazionali e Regionali, e sviluppo d’impresa",
+      interests:
+        "Appassionato all’economia circolare e a modelli d’impresa sostenibile e digitale",
+      linkedin: "https://www.linkedin.com/in/alessandro-biscione/ ",
+    },
+  ];;
+
   const container = {
     w: "100%",
     h: "auto",
@@ -22,68 +79,27 @@ export const Network = () => {
     bgSize: "cover",
     bgAttachment: "fixed",
   };
-  const logoContainer = {
-    width: "180px",
-    h: "180px",
-    bg: "#fff",
-    borderRadius: "50%",
-    position: "relative",
-  };
-  const logo = {
-    position: "absolute",
-    display: "block",
-    width: "150px",
-    top: "50%", /* position the top  edge of the element at the middle of the parent */
-    left: "50%", /* position the left edge of the element at the middle of the parent */
-    transform: "translate(-50%, -50%)",
-  };
+
   return (
     <Flex sx={container}>
       <TextSection
         heading={t("network_heading")}
         text={t("network_description")}
       ></TextSection>
-      <Flex bg={"#fff"}>
-        <SquareBackground>
-          <SplitScreen>
-            <Flex alignItems={"center"}>
-              <Heading color={"orange.400"} fontSize={"3rem"}>Who trusted us</Heading>
-            </Flex>
-            <Flex
-              justifyContent={"space-around"}
-              gap={"30px"}
-              width={"100%"}
-              alignItems={"center"}
-            >
-              <Box sx={logoContainer}>
-                <Image src={e4b} sx={logo}></Image>
-              </Box>
-              <Box sx={logoContainer}>
-                <Image src={quartotempo} sx={logo}></Image>
-              </Box>
-              <Box sx={logoContainer}>
-                <Image src={sis} sx={logo}></Image>
-              </Box>
-              <Box sx={logoContainer}>
-                <Image src={zinev} sx={logo}></Image>
-              </Box>
-            </Flex>
-          </SplitScreen>
-        </SquareBackground>
-      </Flex>
-      <Flex bg={"#fff"}>
-      <SquareBackground left={"true"}>
-        <SplitScreen>
-          <Flex>
-            
-          </Flex>
-          <Flex>
-            <Heading>Our colaborators</Heading>
-          </Flex>
-        </SplitScreen>
-      </SquareBackground>
-      </Flex>
-      <Footer></Footer>
+      <CardsSectionContainer
+        heading={t("companies_section_heading")}
+        data={companiesData}
+        Component={CompanyCard}
+      />
+      <BackgroundImage src={background} inverted={true}>
+        <CardsSectionContainer
+          heading={"Collaboratori"}
+          data={collaboratorsData}
+          Component={CollaboratorCard}
+          emptyBg={true}
+        />
+      </BackgroundImage>
+      <Footer />
     </Flex>
   );
 };

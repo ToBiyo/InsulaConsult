@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 
-export const BackgroundImage = ({ src, children }) => {
+export const BackgroundImage = ({ src, children, inverted }) => {
   const container = {
     w: "100vw",
     h: "100vh",
@@ -15,7 +15,7 @@ export const BackgroundImage = ({ src, children }) => {
     h: "100vh",
     position: "absolute",
     zIndex: 1,
-    background: `linear-gradient(to right, #012d5e, rgba(255, 255, 255, 0))`,
+    background: inverted ?`linear-gradient(to left, #012d5e, rgba(0, 0, 0, 0.7))` : `linear-gradient(to right, #012d5e, rgba(255, 255, 255, 0))`,
     backgroundAttachment : "fixed", 
     borderBottom :  "1px solid #fff"
   };

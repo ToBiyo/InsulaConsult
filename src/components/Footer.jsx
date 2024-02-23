@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 //chakra
 import { Flex, Heading, Text } from "@chakra-ui/react";
 //font awesome
@@ -8,10 +9,8 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-
-
-export const Footer = ({bg}) => {
-    const {t} = useTranslation()
+export const Footer = ({ bg }) => {
+  const { t } = useTranslation();
   const Container = {
     w: "100vw",
     h: "100vh",
@@ -19,10 +18,10 @@ export const Footer = ({bg}) => {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    position : 'relative'
+    position: "relative",
   };
   const footerContainer = {
-    w: {base : '90vw', sm : '80vw', },
+    w: { base: "90vw", sm: "80vw" },
     color: "#fff",
     h: "auto",
     justifyContent: "space-around",
@@ -32,32 +31,38 @@ export const Footer = ({bg}) => {
     padding: "100px 0",
   };
   const quickLinksContainer = {
-    maxWidth : "30%",
+    maxWidth: "30%",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    fontSize : '1.2rem'
+    fontSize: "1.2rem",
+  };
+  const linkContainer = {
+    w: "100%",
+    gap: "10px",
+    flexDir : "column", alignItems : "center"
   };
   const pageHeadings = {
     color: "orange.400",
-    fontSize : {base : '1.6rem', md : '2rem'},
+    fontSize: { base: "1.6rem", md: "2rem" },
     marginBottom: "30px",
   };
   const contactsContainer = {
     flexDirection: "column",
-    alignItems : 'center'
+    alignItems: "center",
   };
   const contacts_box = {
-    justifyContent : "space-around",
-    alignItems : "center"
-  }
+    flexDir : "column",
+    gap : "20px",
+    alignItems: "center",
+  };
   const copyrightContainer = {
-    color : '#fff',
-    padding : '0 10px',
-    marginTop : '20px',
-    w: {base : '90vw', sm : '80vw', md : '70vw', lg : '50vw', xl : '40vw'},
-    alignItems : 'center',
-    justifyContent : 'center'
+    color: "#fff",
+    padding: "0 10px",
+    marginTop: "20px",
+    w: { base: "90vw", sm: "80vw", md: "70vw", lg: "50vw", xl: "40vw" },
+    alignItems: "center",
+    justifyContent: "center",
   };
   const iconContainer = {
     justifyContent: "center",
@@ -76,11 +81,21 @@ export const Footer = ({bg}) => {
           <Heading sx={pageHeadings}>{t("home_head_title")}</Heading>
           <Text>{t("home_head_description")}</Text>
         </Flex>
+        <Flex sx={quickLinksContainer}>
+          <Heading sx={pageHeadings}>Quick Links</Heading>
+          <Flex sx={linkContainer}>
+            <NavLink to={"/InsulaConsult/"} className={"nav_link"}>Home</NavLink>
+            <NavLink to={"/InsulaConsult/services"} className={"nav_link"}>Servizi</NavLink>
+            <NavLink to={"/InsulaConsult/projects"} className={"nav_link"}>Progetti</NavLink>
+            <NavLink to={"/InsulaConsult/network"} className={"nav_link"}>Network</NavLink>
+          </Flex>
+          <Flex></Flex>
+        </Flex>
         <Flex sx={contactsContainer}>
           <Heading sx={pageHeadings}>Contacts</Heading>
           <Flex sx={contacts_box}>
             <Flex sx={iconContainer}>
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faLinkedin}/>
             </Flex>
             <Flex sx={iconContainer}>
               <FontAwesomeIcon icon={faFacebook} />
@@ -89,7 +104,10 @@ export const Footer = ({bg}) => {
               <FontAwesomeIcon icon={faInstagram} />
             </Flex>
             <Flex sx={iconContainer}>
-              <a href="mailto:fabio.web.arru@gmail.com" style={{margin : 0, padding : '0'}}>
+              <a
+                href="mailto:fabio.web.arru@gmail.com"
+                style={{ margin: 0, padding: "0" }}
+              >
                 <Flex sx={iconContainer}>
                   <FontAwesomeIcon icon={faEnvelope} />
                 </Flex>
