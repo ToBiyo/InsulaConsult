@@ -21,7 +21,7 @@ export const SquareBackground = ({ children, left, width, opacity, color }) => {
     clipPath: left ? leftCilpPath : rightClipPath,
     bg: color ? color : "primary",
     order : left ? 1 : 2,
-    opacity : 0.97
+    opacity : 0.955
   };
   const bgNone_container = {
     flex : 1,

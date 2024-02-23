@@ -5,11 +5,9 @@ import {LanguageSwitch} from './LanguageSwitch';
 //resources
 import logo from "../assets/images/logo.svg";
 import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
 
 
 export const Menu = () => {
-  const [menuBg, setMenuBg] = useContext(ThemeContext)
   //translation resource
   const { t } = useTranslation("menu");
 
@@ -24,7 +22,6 @@ export const Menu = () => {
 
   const nav = {
     w: "100%",
-    bg : menuBg ? menuBg : "none",
     h: "60px",
     justifyContent: "center",
     alignIems: "center",

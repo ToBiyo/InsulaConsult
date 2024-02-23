@@ -1,7 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Flex, Heading } from "@chakra-ui/react";
-import { SquareBackground } from "./SquareBackground";
-import { CardsContainer } from "./CardsContainer";
+import { Flex} from "@chakra-ui/react";
 import { ProjectCard } from "./ProjectsCard";
 import { ServiceCard } from "./ServiceCard";
 
@@ -17,8 +15,7 @@ import logo3 from "../assets/images/Progetti/logo3.png";
 import logo4 from "../assets/images/Progetti/logo4.png";
 
 export const CardsSection = ({ section, children, heading }) => {
-
-    const {t} = useTranslation();
+  const { t } = useTranslation();
   //data
   const ProjectsData = [
     {
@@ -78,36 +75,23 @@ export const CardsSection = ({ section, children, heading }) => {
     },
   ];
 
-  const title = {
-    fontSize : "4rem",
-    color : "#fff",
-    alignSelf : "flex-end",
-    borderBottom : "5px solid",
-    borderColor : "orange.400"
-  }
-  
 
   const servicesContent = servicesData.map((service) => (
     <ServiceCard key={service.title} data={service} />
   ));
 
   const projectsContent = ProjectsData.map((project) => (
-    <ProjectCard  key={project.logo} data={project} />
+    <ProjectCard key={project.logo} data={project} />
   ));
 
   const container = {
-    w: "100%",
+    w: "80%",
     h: "100%",
+    justifyContent : "space-around"
   };
   return (
     <Flex sx={container}>
-      <SquareBackground opacity={0.95}>
-        <Heading sx={title}>{heading}</Heading>
-        <CardsContainer>
-           {section === "services" ? servicesContent : projectsContent} 
-        </CardsContainer>
-        {children}
-      </SquareBackground>
+      {section === "services" ? servicesContent : projectsContent}
     </Flex>
   );
 };
