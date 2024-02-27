@@ -3,8 +3,7 @@ import { Flex } from "@chakra-ui/react";
 export const BackgroundImage = ({ src, children, inverted }) => {
   const container = {
     w: "100vw",
-    h: "100vh",
-    position: "realtive",
+    position : "relative",
     backgroundImage: `url(${src})`,
     backgroundSize : 'cover',
     backgroundPosition : 'center',
@@ -12,10 +11,10 @@ export const BackgroundImage = ({ src, children, inverted }) => {
   };
   const gradientOverlay = {
     w: "100%",
-    h: "100vh",
-    position: "absolute",
+    minH: "100vh",
+    position: "relative",
     zIndex: 1,
-    background: inverted ?`linear-gradient(to left, #012d5e, rgba(0, 0, 0, 0.7))` : `linear-gradient(to right, #012d5e, rgba(255, 255, 255, 0))`,
+    background: inverted ? `linear-gradient(to left, #012d5e, rgba(0, 0, 0, 0.5))` : `linear-gradient(to right, #012d5e, rgba(0, 0, 0, 0))`,
     backgroundAttachment : "fixed", 
     borderBottom :  "1px solid #fff"
   };

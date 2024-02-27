@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Footer } from "../components/Footer";
 import { TextSection } from "../components/TextSection";
-import { PageSectionsContainer } from "../components/PageSectionsContainer";
+import { DetailsPageContainer } from "../components/DetailsPageContainer";
 import { ServiceSectionContent } from "../components/ServiceSectionContent";
 //assets
 import banner from "../assets/images/Servizi/banner3.jpg";
@@ -89,7 +89,7 @@ export const Services = () => {
         heading={t("service_head_title")}
         text={t("service_head_description")}
       ></TextSection>
-      <PageSectionsContainer
+      <DetailsPageContainer
         data={servicesData}
         Component={ServiceSectionContent}
       />

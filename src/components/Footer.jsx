@@ -13,7 +13,7 @@ export const Footer = ({ bg }) => {
   const { t } = useTranslation();
   const Container = {
     w: "100vw",
-    h: "100vh",
+    minHeight: "100vh",
     bg: "primary",
     alignItems: "center",
     justifyContent: "center",
@@ -24,14 +24,16 @@ export const Footer = ({ bg }) => {
     w: { base: "90vw", sm: "80vw" },
     color: "#fff",
     h: "auto",
-    justifyContent: "space-around",
-    alignItems: "flex-start",
+    flexDir: { base: "column", md: "row" },
+    justifyContent: { base: "center", md: "space-around" },
+    alignItems: "center",
     borderBottom: "1px dotted",
     borderColor: "orange.400",
     padding: "100px 0",
+    gap: { base: "40px" },
   };
   const quickLinksContainer = {
-    maxWidth: "30%",
+    maxWidth: { base: "100%", md: "30%" },
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -40,7 +42,9 @@ export const Footer = ({ bg }) => {
   const linkContainer = {
     w: "100%",
     gap: "10px",
-    flexDir : "column", alignItems : "center"
+    flexDir: "column",
+    justifyContent : "center",
+    alignItems: "center",
   };
   const pageHeadings = {
     color: "orange.400",
@@ -52,8 +56,8 @@ export const Footer = ({ bg }) => {
     alignItems: "center",
   };
   const contacts_box = {
-    flexDir : "column",
-    gap : "20px",
+    flexDir: "column",
+    gap: "20px",
     alignItems: "center",
   };
   const copyrightContainer = {
@@ -84,10 +88,18 @@ export const Footer = ({ bg }) => {
         <Flex sx={quickLinksContainer}>
           <Heading sx={pageHeadings}>Quick Links</Heading>
           <Flex sx={linkContainer}>
-            <NavLink to={"/InsulaConsult/"} className={"nav_link"}>Home</NavLink>
-            <NavLink to={"/InsulaConsult/services"} className={"nav_link"}>Servizi</NavLink>
-            <NavLink to={"/InsulaConsult/projects"} className={"nav_link"}>Progetti</NavLink>
-            <NavLink to={"/InsulaConsult/network"} className={"nav_link"}>Network</NavLink>
+            <NavLink to={"/InsulaConsult/"} className={"nav_link"}>
+              Home
+            </NavLink>
+            <NavLink to={"/InsulaConsult/services"} className={"nav_link"}>
+              Servizi
+            </NavLink>
+            <NavLink to={"/InsulaConsult/projects"} className={"nav_link"}>
+              Progetti
+            </NavLink>
+            <NavLink to={"/InsulaConsult/network"} className={"nav_link"}>
+              Network
+            </NavLink>
           </Flex>
           <Flex></Flex>
         </Flex>
@@ -95,7 +107,7 @@ export const Footer = ({ bg }) => {
           <Heading sx={pageHeadings}>Contacts</Heading>
           <Flex sx={contacts_box}>
             <Flex sx={iconContainer}>
-              <FontAwesomeIcon icon={faLinkedin}/>
+              <FontAwesomeIcon icon={faLinkedin} />
             </Flex>
             <Flex sx={iconContainer}>
               <FontAwesomeIcon icon={faFacebook} />

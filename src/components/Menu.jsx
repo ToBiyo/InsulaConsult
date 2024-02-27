@@ -1,15 +1,28 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Flex, Button, Image } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import {LanguageSwitch} from './LanguageSwitch';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 //resources
 import logo from "../assets/images/logo.svg";
-import { useContext } from "react";
+
+
+
 
 
 export const Menu = () => {
   //translation resource
   const { t } = useTranslation("menu");
+
+  const [displayMenu, setDisplayMenu] = useState(false);
+
+  //clean menu display on new rander
+  useEffect(()=>{
+    setDisplayMenu(false);
+  }, [])
 
   //routes
   const routes = [
@@ -21,23 +34,32 @@ export const Menu = () => {
   ];
 
   const nav = {
+    bg : {base : displayMenu ? "primary" : "none", md : "none"},
     w: "100%",
-    h: "60px",
+    h: {base : displayMenu ? "100%" : "60px", md : "60px"},
     justifyContent: "center",
     alignIems: "center",
-    position : 'absolute',
+    position :{base : displayMenu ? "fixed" : "absolute"},
     top : 0,
-    zIndex : 2, 
+    zIndex : 3,
+   
   };
   const menuContainer = {
     w : "80%",
     justifyContent : 'space-between',
-
+    position : {base : "absolute", md : "relative"},
   }
   const linksContainer = {
+    w : {base : "100%", md : "auto"},
+    left : "0",
     h: "100%",
+    flexDir : {base : "column", md : "row"},
+    justifyContent : "center",
     alignItems: "center",
     gap: "10px",
+    position  :{base : "fixed", md : "relative"},
+    display : {base : displayMenu ? "flex" : "none", md : "flex"},
+    zIndex : {base : -1, md : 3}
   };
   const MenuButton = {
     bg : "none",
@@ -55,11 +77,27 @@ export const Menu = () => {
 
   const logoImg = {
     w: "60px",
+    zIndex : "4",
   };
+  const smartMenuBtn = {
+    color : "#fff",
+    alignItems : "center",
+    fontSize : "2rem",
+    cursor : "pointer",
+    display : {base : "flex", md : "none"}
+  }
+
+  const clickHandler = (e) =>{
+    setDisplayMenu((prev) => !prev);
+  }
+  const hideMenu = () =>{
+    setDisplayMenu(false)
+  }
+ 
 
   const MenuLinks = routes.map((link) => (
     <NavLink to={link.path} key={link.name}>
-      <Button sx={MenuButton}>
+      <Button sx={MenuButton} onClick={hideMenu}>
         {link.name}
       </Button>
     </NavLink>
@@ -75,7 +113,10 @@ export const Menu = () => {
         </Flex>
         <Flex sx={linksContainer}>
             {MenuLinks}
-            <LanguageSwitch />
+            <LanguageSwitch onClickHandler={hideMenu}/>
+        </Flex>
+        <Flex onClick={clickHandler} sx={smartMenuBtn}>
+          <FontAwesomeIcon icon={displayMenu ? faXmark : faBars} />
         </Flex>
       </Flex>
     </Flex>

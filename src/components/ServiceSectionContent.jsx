@@ -5,29 +5,36 @@ export const ServiceSectionContent = ({ data }) => {
   const { title, subservices } = data;
 
   const container = {
-    h: "100%",
+    w : "100%",
+    h: "auto",
     flexDir: "column",
     justifyContent: "center",
-    padding: "0 50px",
+    alignItems : {base : "center", md : "flex-start"},
+    padding: {base : "0", md : "0 50px"},
     gap: "50px",
+
+    
   };
   const heading = {
-    fontSize: "3rem",
+    fontSize: {base : "2.2rem", md : "3rem"},
     color: "orange.400",
+    textAlign : {base : "center", md : "left"}
   };
   const subserviceContainer = {
     flexDir: "column",
     padding: "10px 0",
-    gap: "20px",
+    gap: "10px",
     borderBottom: "1px dotted orange",
   };
   const subHeading = {
-    fontSize: "1.6rem",
+    fontSize: {base : "1.3rem", md : "1.6rem"},
     color: "orange.300",
+    textAlign : {base : "center", md : "left"}
   };
   const subText = {
     color: "#fff",
-    fontSize: "1.1rem",
+    fontSize: {base : "0.9rem", md : "1.1rem"},
+    textAlign : {base : "center", md : "left"}
   };
   return (
     <Flex sx={container}>

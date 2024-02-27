@@ -3,10 +3,9 @@ import { Flex } from "@chakra-ui/react";
 import { NavigationButtons } from "../components/NavigationButtons";
 import { Footer } from "../components/Footer";
 import { TextSection } from "../components/TextSection";
-import { CardsSectionContainer } from "../components/CardsSectionContainer";
-import {ServiceCard} from "../components/ServiceCard";
-import {ProjectCard} from "../components/ProjectsCard";
-
+import { CardsSection } from "../components/CardsSection";
+import { ServiceCard } from "../components/cards/ServiceCard";
+import { ProjectCard } from "../components/cards/ProjectsCard";
 
 //resource
 import home from "../assets/images/Home/home.png";
@@ -106,11 +105,11 @@ export const Home = () => {
         </TextSection>
       </header>
       <main>
-        <CardsSectionContainer
+        <CardsSection
           heading={t("service_heading")}
           path={"/InsulaConsult/services"}
           data={servicesData}
-          Component = {ServiceCard}
+          Component={ServiceCard}
         />
         <section>
           <TextSection
@@ -121,11 +120,11 @@ export const Home = () => {
             path={"/about"}
           ></TextSection>
         </section>
-        <CardsSectionContainer
+        <CardsSection
           heading={t("project_heading")}
           path={"/InsulaConsult/projects"}
           data={projectsData}
-          Component = {ProjectCard}
+          Component={ProjectCard}
         />
         <section>
           <TextSection

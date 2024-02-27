@@ -5,14 +5,15 @@ export const ServiceCard = ({ data }) => {
   const { img, title, subservices } = data;
 
   const Card = {
+    w : "300px",
     flexDir: "column",
     color: "#fff",
-    width: "20%",
     gap: "20px",
     alignItems: "center",
+    margin : "20px 0"
   };
   const serviceImage = {
-    w: "170px",
+    w: {base : "120px", md : "170px"},
     position: "absolute",
     display: "block",
     top: "50%",
@@ -20,15 +21,15 @@ export const ServiceCard = ({ data }) => {
     transform: "translate(-50%, -50%)",
   };
   const logoContainer = {
-    w: "180px",
-    h: "180px",
+    w: {base : "130px", md : "180px"},
+    h: {base : "130px", md : "180px"},
     position: "relative",
     bg: "#fff",
     borderRadius: "50%",
      border : "1px solid orange"
   };
   const ServiceHeading = {
-    fontSize: "1.3rem",
+    fontSize: {base : "1.2rem", md : "1.3rem"},
     color: "orange.400",
     textAlign: "center",
   };
@@ -36,7 +37,7 @@ export const ServiceCard = ({ data }) => {
     flexDir: "column",
     justifyContent: "center",
     textAlign: "center",
-    fontSize : "1rem"
+    fontSize : {base : "0.9rem", md : "1.1rem"}
   };
 
   const subservicesContent = subservices.map((subservice) => (

@@ -13,11 +13,11 @@ export const TextContent = ({heading, text, h, path, direction}) => {
     }
 
     const title ={
-        fontSize : "4rem",
+        fontSize : {base : "2.5rem", md : "4rem"},
         color :  "orange.400",
     }
     const txt = {
-        fontSize : '1.1rem',
+        fontSize : {base : "0.95rem", md : "1.1rem"},
         color : "#fff",
         
         

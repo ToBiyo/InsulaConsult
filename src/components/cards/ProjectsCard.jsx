@@ -5,8 +5,8 @@ export const ProjectCard = ({ data }) => {
   const { logo, description } = data;
 
   const ProjectCard = {
+    w : "300px",
     flexDir: "column",
-    w: "20%",
     alignItems: "center",
     gap: "30px",
     cursor: "pointer",
@@ -14,6 +14,7 @@ export const ProjectCard = ({ data }) => {
     ":hover": {
       transform: "scale(1.03)",
     },
+    margin : "20px 0"
   };
   const logoContainer = {
     w: "180px",

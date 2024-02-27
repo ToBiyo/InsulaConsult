@@ -3,9 +3,9 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { TextSection } from "../components/TextSection";
 import { BackgroundImage } from "../components/BackgroundImage";
 import { Footer } from "../components/Footer";
-import { CardsSectionContainer } from "../components/CardsSectionContainer";
-import { CompanyCard } from "../components/CompanyCard";
-import { CollaboratorCard } from "../components/CollaboratorCard";
+import { CardsSection } from "../components/CardsSection";
+import { CompanyCard } from "../components/cards/CompanyCard";
+import { CollaboratorCard } from "../components/cards/CollaboratorCard";
 //asstets
 import banner from "../assets/images/Network/banner.jpg";
 import background from "../assets/images/Network/background.jpg";
@@ -86,13 +86,13 @@ export const Network = () => {
         heading={t("network_heading")}
         text={t("network_description")}
       ></TextSection>
-      <CardsSectionContainer
+      <CardsSection
         heading={t("companies_section_heading")}
         data={companiesData}
         Component={CompanyCard}
       />
       <BackgroundImage src={background} inverted={true}>
-        <CardsSectionContainer
+        <CardsSection
           heading={"Collaboratori"}
           data={collaboratorsData}
           Component={CollaboratorCard}

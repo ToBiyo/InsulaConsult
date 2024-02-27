@@ -10,16 +10,18 @@ export const AboutSectionContent = ({ data }) => {
     flexDir: "column",
     gap: "20px",
     justifyContent: "center",
-    padding: ""
+    alignItems : {base : "center", md : "flex-start"},
+    
   };
 
   const titleHeading = {
-    fontSize: "4rem",
+    fontSize: {base : "2.5rem", md : "3.5rem"},
     color: "orange.400",
   };
   const txt = {
-    fontSize: "1.1rem",
+    fontSize: {base : "0.9rem", md : "1rem", lg : "1.1rem"},
     color: "#fff",
+    textAlign : {base : "center", md : "left"}
   };
   return (
     <Flex sx={textContainer}>

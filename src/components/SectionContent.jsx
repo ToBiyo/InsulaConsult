@@ -1,23 +1,19 @@
 import { Flex } from "@chakra-ui/react";
-import { SquareBackground } from "./SquareBackground";
+import { SkewBackground } from "./SkewBackground";
 import { SplitScreen } from "../layouts/SplitScreen";
 
-export const SectionContent = ({data, left, Component}) => {
+export const SectionContent = ({data, inverted, Component}) => {
     const container = {
-        h : "100vh",
-        backgroudImage : data.background ? `url(${data.background})` : null,
-        backgroundPosition : "center",
-        backgroundSize : "cover",
-        backgroundAttachment : "fixed"
+        minH : "100vh",
     }
     return (
     <Flex sx={container}>
-        <SquareBackground left={left} /* width={"100%"} */ opacity={0.95}>
-            <SplitScreen left={left}>
-                <Flex />
+        <SkewBackground inverted={inverted}  opacity={0.95}>
+            <SplitScreen inverted={inverted}>
                 <Component data={data}/>
+                <Flex />
             </SplitScreen>
-        </SquareBackground>
+        </SkewBackground>
     </Flex>
   )
 }

@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-export const LanguageSwitch = ({color}) => {
+export const LanguageSwitch = ({ color, onClickHandler}) => {
     const [displayed, setDisplayed] = useState("none");
 
     const AccordionBox = {
@@ -74,7 +74,8 @@ export const LanguageSwitch = ({color}) => {
         sx={MenuButton}
         onClick={() => {
           i18next.changeLanguage("it");
-          setDisplayed('none')
+          setDisplayed('none');
+          onClickHandler();
         }}
       >
         Italiano
@@ -83,7 +84,8 @@ export const LanguageSwitch = ({color}) => {
         sx={MenuButton}
         onClick={() => {
           i18next.changeLanguage("en");
-          setDisplayed('none')
+          setDisplayed('none');
+          onClickHandler();
         }}
       >
         English

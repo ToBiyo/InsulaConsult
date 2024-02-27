@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 
-export const SquareBackground = ({ children, left, width, opacity, color }) => {
+export const SkewBackground = ({ children, inverted, width, color }) => {
   
   const leftCilpPath = "polygon(0 0, 80% 0%, 100% 100%, 0% 100%)";
   const rightClipPath ="polygon(15% 0, 100% 0, 100% 100%, 0% 100%)"; 
@@ -9,34 +9,38 @@ export const SquareBackground = ({ children, left, width, opacity, color }) => {
 
   const container = {
     w: "100%",
-    h: "100vh",
+    minHeight: "100vh",
     position: "relative",
     justifyContent: "center",
     alignItems : "center",
-    borderBottom :  "1px dotted #fff"
+    borderBottom :  "1px solid #fff"
   };
   const background = {
-    flex: 2,
+    flex: { base : "100%", sm : "100%", md : "80%", lg : "50%", xl : "40%"},
     h: "100%",
-    clipPath: left ? leftCilpPath : rightClipPath,
+    clipPath: inverted ? rightClipPath : leftCilpPath,
     bg: color ? color : "primary",
-    order : left ? 1 : 2,
-    opacity : 0.955
+    order : inverted ? 2 : 1,
+    opacity : 0.95,
+    display : {base : "none", md : "flex"}
   };
   const bgNone_container = {
     flex : 1,
-    order : left ? 2 : 1
-
+    order : inverted ? 1 : 2,
+    display : {base : "none", md : "flex"}
   }
   const overlay = {
-    position: "absolute",
+    position: {base : "relative", md : "absolute"},
     h: "100%",
-    w: width ? width :"80%",
+    w:  {base : "100%", md : "80%"},
     zIndex: 1,
     display: "flex",
     flexDir: "column",
     justifyContent: "center",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
+    bg : {base : "rgba(1, 45, 94, 0.9)", md : "none"},
+    padding : {base : "30px 10%", md : "0"} 
+    
   };
   return (
     <Flex sx={container}>

@@ -3,8 +3,8 @@ import { Flex } from "@chakra-ui/react";
 import { BackgroundImage } from "../components/BackgroundImage";
 import { TextSection } from "../components/TextSection";
 import { Footer } from "../components/Footer";
-import { PageSectionsContainer } from "../components/PageSectionsContainer";
-import { ProjectsSectionContent } from "../components/ProjectsSectionContent";
+import { DetailsPageContainer } from "../components/DetailsPageContainer";
+import { ProjectsSectionsDetails } from "../components/ProjectsSectionsDetails";
 //asstes
 import banner from "../assets/images/Progetti/banner.jpg";
 import faster from "../assets/images/Progetti/Faster.jpg";
@@ -56,20 +56,13 @@ export const Projects = () => {
     backgroundAttachment: "fixed",
   };
 
-  const projectContainer = {
-    h: "100vh",
-    bgImage: `url(${banner})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundAttaChment: "fixed",
-  };
   
   return (
     <Flex sx={container}>
       <BackgroundImage>
         <TextSection h={"h2"} heading={"Projects"}></TextSection>
       </BackgroundImage>
-      <PageSectionsContainer data={projectsData} Component={ProjectsSectionContent}></PageSectionsContainer>
+      <DetailsPageContainer data={projectsData} Component={ProjectsSectionsDetails} />
       <Footer />
     </Flex>
   );

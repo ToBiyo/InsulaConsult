@@ -5,21 +5,23 @@ export const CompanyCard = ({ data }) => {
   const { src, link } = data;
   const card = {
     flexDir: "column",
-    w: "20%",
+    w: "300px",
     alignItems: "center",
     gap: "20px",
+    margin : "20px 0"
   };
   const logoContainer = {
-    width: "200px",
-    h: "200px",
+    width: {base : "180px", md : "200px"},
+    h: {base : "180px", md : "200px"},
     bg: "#fff",
     borderRadius: "50%",
     position: "relative",
+    border : "3px solid orange"
   };
   const logoImage = {
     position: "absolute",
     display: "block",
-    width: "140px",
+    width: {base : "120px", md : "140px"},
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",

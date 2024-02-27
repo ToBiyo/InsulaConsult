@@ -5,7 +5,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 export const CollaboratorCard = ({ data }) => {
   const { image, name, role, story, interests, linkedin } = data;
   const card = {
-    maxWidth: "35%",
+    maxWidth: "650px",
     flexDir: "column",
     alignItems: "center",
     justifyContent: "center",
