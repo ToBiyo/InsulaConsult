@@ -1,7 +1,14 @@
 //chakra
 import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-export const ServiceCard = ({ data }) => {
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+Aos.init({
+  disable : 'mobile' 
+})
+
+export const ServiceCard = ({ data, i }) => {
   const { img, title, subservices } = data;
 
   const Card = {
@@ -39,6 +46,8 @@ export const ServiceCard = ({ data }) => {
     textAlign: "center",
     fontSize : {base : "0.9rem", md : "1.1rem"}
   };
+  
+  const AosEffect = i % 2 == 0 ? "fade-down" : "fade-up";
 
   const subservicesContent = subservices.map((subservice) => (
     <Text
@@ -53,7 +62,7 @@ export const ServiceCard = ({ data }) => {
   ));
 
   return (
-    <Flex sx={Card} className="Card">
+    <Flex sx={Card} className="Card" data-aos = {AosEffect} data-aos-delay={150} data-aos-duration={500}>
       <Box sx={logoContainer}>
         <Image src={img} sx={serviceImage} />
       </Box>

@@ -17,7 +17,7 @@ export const About = () => {
     },
     {
       title : t("about_mission_title"),
-      description : t("about_mission")
+      description : t("about_mission_description")
     }
   ]
   const box = {

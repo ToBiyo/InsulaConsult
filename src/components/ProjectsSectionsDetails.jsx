@@ -1,8 +1,18 @@
 import { NavigationButtons } from "./NavigationButtons";
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-export const ProjectsSectionsDetails = ({ data }) => {
+
+Aos.init({
+  disable : 'mobile'
+});
+
+
+export const ProjectsSectionsDetails = ({ data, inverted }) => {
+
   const { logo, heading, description } = data;
+
   const container = {
     flexDir: "column",
     color: "#fff",
@@ -36,15 +46,16 @@ export const ProjectsSectionsDetails = ({ data }) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)"
-    
   };
+  const AosEffect = inverted ? "fade-left" : "fade-right";
+
   return (
     <Flex sx={container}>
-      <Flex sx={logoContainer}>
-        <Image sx={logoImage} src={logo} />
+      <Flex sx={logoContainer} data-aos="flip-up" data-aos-duration={500}>
+        <Image sx={logoImage} src={logo}/>
       </Flex>
-      <Heading sx={title}>{heading}</Heading>
-      <Text sx={text}>{description}</Text>
+      <Heading sx={title} data-aos={AosEffect} data-aos-duration={500}>{heading}</Heading>
+      <Text sx={text} data-aos={"fade-up"} data-aos-duration={500} data-aos-delay={300}>{description}</Text>
       <NavigationButtons />
     </Flex>
   );

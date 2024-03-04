@@ -14,27 +14,31 @@ export const CollaboratorCard = ({ data }) => {
   };
   const nameHeading = {
     color: "orange",
-    fontSize: "1.8rem",
+    fontSize: {base : "1.6rem",md : "1.8rem"},
   };
   const roleHeading = {
     color: "#fff",
-    fontSize: "1.4rem",
+    fontSize: {base : "1.2rem", md : "1.4rem"},
     borderBottom: "2px solid",
     padding: "5px 0",
     borderColor: "orange.400",
   };
   const imageContainer = {
-    width: "250px",
-    h: "250px",
+    width: {base : "200px", md : "250px"},
+    h: {base : "200px", md : "250px"},
     borderRadius: "50%",
     overflow: "hidden",
     border: "5px solid #fff",
   };
-  const profilePicture = {};
+  const profilePicture = {
+    width : "100%",
+    height : "100%"
+  };
 
   const text = {
     color: "#fff",
-    textAlign : "center"
+    textAlign : "center",
+    fontSize : {base : "0.9rem", md : "1rem"}
   };
 
   const socialLink = {

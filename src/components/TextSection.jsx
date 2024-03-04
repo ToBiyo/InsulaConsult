@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { BackgroundImage } from "./BackgroundImage";
-import { SplitScreen } from "../layouts/SplitScreen";
+import { JustifyContent } from "../layouts/JustifyContent";
 import { TextContent } from "./TextContent";
 
 export const TextSection = ({ src, h, heading, text, children, path }) => {
@@ -12,10 +12,9 @@ export const TextSection = ({ src, h, heading, text, children, path }) => {
   return (
     <BackgroundImage src={src}>
       <Flex sx={container}>
-      <SplitScreen>
+      <JustifyContent>
         <TextContent h={h} heading={heading} text={text} path={path} />
-        <></>
-      </SplitScreen>
+      </JustifyContent>
       </Flex>
     </BackgroundImage>
   );

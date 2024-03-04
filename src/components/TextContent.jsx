@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import { NavigationButtons } from './NavigationButtons';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+Aos.init({
+    disable : 'mobile'
+});
 
 export const TextContent = ({heading, text, h, path, direction}) => {
     const{ t } = useTranslation("home");
@@ -23,8 +29,8 @@ export const TextContent = ({heading, text, h, path, direction}) => {
         
     }
     return (
-    <Flex sx={textContainer}>
-       <Heading as={h} sx={title}>{t(heading)}</Heading>
+    <Flex sx={textContainer} data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
+       <Heading as={h} sx={title}  data-aos="fade-left" data-aos-delay="400" data-aos-duration="500">{t(heading)}</Heading>
        <Text sx={txt}>{t(text)}</Text>
        <NavigationButtons  path={path}/>
     </Flex>

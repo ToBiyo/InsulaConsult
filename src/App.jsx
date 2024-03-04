@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Menu } from "./components/Menu";
+import { Navigation } from "./components/Navigation";
 import { Flex } from "@chakra-ui/react";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Flex sx={rootContainer}>
-      <Menu />
+      <Navigation />
       <Outlet />
     </Flex>
   );

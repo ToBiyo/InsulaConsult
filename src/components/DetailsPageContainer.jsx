@@ -7,7 +7,6 @@ export const DetailsPageContainer = ({ data, Component }) => {
     width: "100%",
     flexDir: "column",
     h: "auto",
-    
   };
   return (
     <Flex sx={container}>

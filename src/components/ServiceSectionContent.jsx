@@ -1,9 +1,15 @@
 import { NavigationButtons } from "./NavigationButtons";
 import { Flex, Heading, Text } from "@chakra-ui/react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-export const ServiceSectionContent = ({ data }) => {
+Aos.init({
+  disable : "mobile"
+})
+
+export const ServiceSectionContent = ({ data, inverted }) => {
   const { title, subservices } = data;
-
+console.log(inverted);
   const container = {
     w : "100%",
     h: "auto",
@@ -12,8 +18,6 @@ export const ServiceSectionContent = ({ data }) => {
     alignItems : {base : "center", md : "flex-start"},
     padding: {base : "0", md : "0 50px"},
     gap: "50px",
-
-    
   };
   const heading = {
     fontSize: {base : "2.2rem", md : "3rem"},
@@ -36,20 +40,22 @@ export const ServiceSectionContent = ({ data }) => {
     fontSize: {base : "0.9rem", md : "1.1rem"},
     textAlign : {base : "center", md : "left"}
   };
+  
+  const AosEffect = inverted ? "fade-left" : "fade-right";
   return (
     <Flex sx={container}>
-      <Heading as={"h3"} sx={heading}>
+      <Heading as={"h3"} sx={heading} data-aos = {AosEffect} data-aos-duration={500} data-aos-delay ={200}>
         {title}
       </Heading>
       {subservices.map((subservice) => (
-        <Flex sx={subserviceContainer} key={subservice.heading}>
-          <Heading as={"h3"} sx={subHeading}>
+        <Flex sx={subserviceContainer} key={subservice.heading} data-aos ={"fade-up"} data-aosdelay ={800}>
+          <Heading as={"h3"} sx={subHeading} >
             {subservice.heading}
           </Heading>
           <Text sx={subText}>{subservice.description}</Text>
         </Flex>
       ))}
-      <NavigationButtons />
+      <NavigationButtons data-aos={AosEffect}/>
     </Flex>
   );
 };

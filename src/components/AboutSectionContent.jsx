@@ -1,7 +1,14 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { NavigationButtons } from "./NavigationButtons";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-export const AboutSectionContent = ({ data }) => {
+
+Aos.init({
+  disable : "mobile"
+})
+
+export const AboutSectionContent = ({ data, inverted }) => {
   const { title, description } = data;
 
   const textContainer = {
@@ -23,12 +30,14 @@ export const AboutSectionContent = ({ data }) => {
     color: "#fff",
     textAlign : {base : "center", md : "left"}
   };
+  const AosEffect = inverted ? "fade-left" : "fade-right";
+
   return (
     <Flex sx={textContainer}>
-      <Heading sx={titleHeading}>
+      <Heading sx={titleHeading}  data-aos ={AosEffect} data-aos-delay="300" data-aos-duration="500">
         {title}
       </Heading>
-      <Text sx={txt}>{description}</Text>
+      <Text sx={txt} data-aos="fade-up">{description}</Text>
       <NavigationButtons />
     </Flex>
   );

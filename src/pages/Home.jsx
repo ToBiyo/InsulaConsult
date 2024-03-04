@@ -7,6 +7,9 @@ import { CardsSection } from "../components/CardsSection";
 import { ServiceCard } from "../components/cards/ServiceCard";
 import { ProjectCard } from "../components/cards/ProjectsCard";
 
+//data structure
+import { projectsCardsData } from "../data/data";
+import { servicesCardsData } from "../data/data";
 //resource
 import home from "../assets/images/Home/home.png";
 import about from "../assets/images/Home/about.png";
@@ -35,61 +38,47 @@ export const Home = () => {
     bgAttachment: "fixed",
   };
   const projectsData = [
-    {
-      logo: logo1,
-      title: t("project1_title"),
-      description: t("project1_description"),
-    },
-    {
-      logo: logo2,
-      title: t("project2_title"),
-      description: t("project2_description"),
-    },
-    {
-      logo: logo3,
-      title: t("project3_title"),
-      description: t("project3_description"),
-    },
-    {
-      logo: logo4,
-      title: t("project4_title"),
-      description: t("project4_description"),
-    },
+    new projectsCardsData(
+      logo1,
+      t("project1_title"),
+      t("project1_description")
+    ),
+    new projectsCardsData(
+      logo2,
+      t("project2_title"),
+      t("project2_description")
+    ),
+    new projectsCardsData(
+      logo3,
+      t("project3_title"),
+      t("project3_description")
+    ),
+    new projectsCardsData(
+      logo4,
+      t("project4_title"),
+      t("project4_description")
+    ),
   ];
 
   const servicesData = [
-    {
-      img: consult,
-      title: t("consult_service"),
-      subservices: [t("consult_subservice_0"), t("consult_subservice_1")],
-    },
-    {
-      img: management,
-      title: t("management_service"),
-      subservices: [
-        t("management_subservice_0"),
-        t("management_subservice_1"),
-        t("management_subservice_2"),
-      ],
-    },
-    {
-      img: project,
-      title: t("project_service"),
-      subservices: [
-        t("project_subservice_0"),
-        t("project_subservice_1"),
-        t("project_subservice_2"),
-        t("project_subservice_3"),
-      ],
-    },
-    {
-      img: comunication,
-      title: t("comunication_service"),
-      subservices: [
-        t("comunication_subservice_0"),
-        t("comunication_subservice_1"),
-      ],
-    },
+    new servicesCardsData(consult, t("consult_service"), [
+      t("consult_subservice_0"),
+      t("consult_subservice_1"),
+    ]),
+    new servicesCardsData(management, t("management_service"), [
+      t("management_subservice_0"),
+      t("management_subservice_1"),
+    ]),
+    new servicesCardsData(project, t("project_service"), [
+      t("project_subservice_0"),
+      t("project_subservice_1"),
+      t("project_subservice_2"),
+      t("project_subservice_3"),
+    ]),
+    new servicesCardsData(comunication, t("comunication_service"), [
+      t("comunication_subservice_0"),
+      t("comunication_subservice_1"),
+    ]),
   ];
 
   return (

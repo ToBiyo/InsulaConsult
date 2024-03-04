@@ -1,7 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { Flex, Button, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
+Aos.init({
+  disable : "mobile"
+})
 
 export const NavigationButtons = ({ path }) => {
   const { t } = useTranslation("buttons");
@@ -23,7 +28,7 @@ export const NavigationButtons = ({ path }) => {
     },
   };
   return (
-    <Flex gap={"20px"}>
+    <Flex gap={"20px"} data-aos="fade-down" data-aos-delay={100} data-aos-duration={300}>
       <Link href="mailto:arrufabio93@gmail.com" sx={navButton}>
         {t("get_in_touch_btn")}
       </Link>{" "}

@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 //chakra
 import { Flex, Heading, Text } from "@chakra-ui/react";
 //font awesome
+import { Menu } from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -26,7 +27,7 @@ export const Footer = ({ bg }) => {
     h: "auto",
     flexDir: { base: "column", md: "row" },
     justifyContent: { base: "center", md: "space-around" },
-    alignItems: "center",
+    alignItems: {base : "center", md : "flex-start"},
     borderBottom: "1px dotted",
     borderColor: "orange.400",
     padding: "100px 0",
@@ -43,7 +44,7 @@ export const Footer = ({ bg }) => {
     w: "100%",
     gap: "10px",
     flexDir: "column",
-    justifyContent : "center",
+    justifyContent: "center",
     alignItems: "center",
   };
   const pageHeadings = {
@@ -88,20 +89,8 @@ export const Footer = ({ bg }) => {
         <Flex sx={quickLinksContainer}>
           <Heading sx={pageHeadings}>Quick Links</Heading>
           <Flex sx={linkContainer}>
-            <NavLink to={"/InsulaConsult/"} className={"nav_link"}>
-              Home
-            </NavLink>
-            <NavLink to={"/InsulaConsult/services"} className={"nav_link"}>
-              Servizi
-            </NavLink>
-            <NavLink to={"/InsulaConsult/projects"} className={"nav_link"}>
-              Progetti
-            </NavLink>
-            <NavLink to={"/InsulaConsult/network"} className={"nav_link"}>
-              Network
-            </NavLink>
+            <Menu footerMenu={true}/>
           </Flex>
-          <Flex></Flex>
         </Flex>
         <Flex sx={contactsContainer}>
           <Heading sx={pageHeadings}>Contacts</Heading>
