@@ -39,7 +39,8 @@ export const Footer = ({ bg }) => {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "1.2rem",
+    fontSize: { base: "0.9rem", md: "1rem" },
+    textAlign: { base: "center" },
   };
   const linkContainer = {
     w: "100%",
@@ -71,6 +72,8 @@ export const Footer = ({ bg }) => {
     w: { base: "90vw", sm: "80vw", md: "70vw", lg: "50vw", xl: "40vw" },
     alignItems: "center",
     justifyContent: "center",
+    padding: { base: "0px 0 20px 0" },
+    textAlign: "center",
   };
   const iconContainer = {
     justifyContent: "center",

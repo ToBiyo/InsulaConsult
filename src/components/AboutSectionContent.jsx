@@ -1,5 +1,6 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { NavigationButtons } from "./NavigationButtons";
+import { sectionHeadingStyle, sectionText } from "../utitlities/constantStyles";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -19,12 +20,6 @@ export const AboutSectionContent = ({ data, inverted }) => {
     alignItems: { base: "center", md: "flex-start" },
   };
 
-  const titleHeading = {
-    fontSize: { base: "2.5rem", md: "3.5rem" },
-    color: "orange.400",
-    fontFamily: "heading",
-    fontWeight: "normal",
-  };
   const txt = {
     fontSize: { base: "0.9rem", md: "1rem", lg: "1.1rem" },
     color: "#fff",
@@ -36,7 +31,7 @@ export const AboutSectionContent = ({ data, inverted }) => {
   return (
     <Flex sx={textContainer}>
       <Heading
-        sx={titleHeading}
+        sx={sectionHeadingStyle}
         data-aos={AosEffect}
         data-aos-delay="300"
         data-aos-duration="500"

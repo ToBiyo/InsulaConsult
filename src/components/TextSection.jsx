@@ -3,7 +3,7 @@ import { BgImageContainer } from "./BgImageContainer";
 import { JustifyContent } from "../layouts/JustifyContent";
 import { TextContent } from "./TextContent";
 
-export const TextSection = ({ src, h, heading, text, children, path }) => {
+export const TextSection = ({ src, h, heading, text, path }) => {
   const container = {
     w: "80%",
     margin: "0 auto",

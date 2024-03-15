@@ -1,5 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import { NavigationButtons } from "./NavigationButtons";
+import { sectionHeadingStyle } from "../utitlities/constantStyles";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -19,12 +20,7 @@ export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
     gap: "50px",
     borderBottom: "1px solid #fff",
   };
-  const title = {
-    fontSize: { base: "2.5rem", md: "3rem" },
-    color: "orange.400",
-    fontFamily: "heading",
-    fontWeight: "normal",
-  };
+
   const cardsContainer = {
     w: "80%",
     h: "100%",
@@ -35,7 +31,11 @@ export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
   };
   return (
     <Flex sx={container}>
-      <Heading sx={title} data-aos="fade-up" data-aos-duration="500">
+      <Heading
+        sx={sectionHeadingStyle}
+        data-aos="fade-up"
+        data-aos-duration="500"
+      >
         {heading}
       </Heading>
       <Flex sx={cardsContainer}>

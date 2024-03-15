@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Flex } from "@chakra-ui/react";
 import { NavigationButtons } from "../components/NavigationButtons";
-import { Footer } from "../components/Footer";
 import { TextSection } from "../components/TextSection";
 import { CardsSection } from "../components/CardsSection";
 import { ServiceCard } from "../components/cards/ServiceCard";
@@ -125,7 +124,6 @@ export const Home = () => {
           ></TextSection>
         </section>
       </main>
-      <Footer />
     </Flex>
   );
 };

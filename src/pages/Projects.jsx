@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { Flex } from "@chakra-ui/react";
 import { BgImageContainer } from "../components/BgImageContainer";
 import { TextSection } from "../components/TextSection";
-import { Footer } from "../components/Footer";
 import { DetailsPageContainer } from "../components/DetailsPageContainer";
 import { ProjectsSectionsDetails } from "../components/ProjectsSectionsDetails";
 //asstes
@@ -56,14 +55,19 @@ export const Projects = () => {
     backgroundAttachment: "fixed",
   };
 
-  
   return (
     <Flex sx={container}>
       <BgImageContainer>
-        <TextSection h={"h2"} heading={t("projects_head_heading")} text={t("projects_head_description")} />
+        <TextSection
+          h={"h2"}
+          heading={t("projects_head_heading")}
+          text={t("projects_head_description")}
+        />
       </BgImageContainer>
-      <DetailsPageContainer data={projectsData} Component={ProjectsSectionsDetails} />
-      <Footer />
+      <DetailsPageContainer
+        data={projectsData}
+        Component={ProjectsSectionsDetails}
+      />
     </Flex>
   );
 };

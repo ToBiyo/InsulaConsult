@@ -11,8 +11,8 @@ import {
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import "./i18n.js";
-import "@fontsource/source-serif-pro";
-import "@fontsource/source-sans-pro";
+import "@fontsource-variable/lora";
+import "@fontsource/poppins";
 //routes
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -25,8 +25,8 @@ const theme = extendTheme({
     primary: "#012d5e",
   },
   fonts: {
-    heading: "'Source Serif Pro', serif",
-    body: "'Source Sans Pro', sans-serif",
+    heading: "'Lora Variable', serif",
+    body: "'Poppins', sans-serif",
   },
 });
 

@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { Flex, Heading } from "@chakra-ui/react";
 import { TextSection } from "../components/TextSection";
 import { BgImageContainer } from "../components/BgImageContainer";
-import { Footer } from "../components/Footer";
 import { CardsSection } from "../components/CardsSection";
 import { CompanyCard } from "../components/cards/CompanyCard";
 import { CollaboratorCard } from "../components/cards/CollaboratorCard";
@@ -59,7 +58,7 @@ export const Network = () => {
       t("biscione_story"),
       t("biscione_interests"),
       "https://www.linkedin.com/in/alessandro-biscione/"
-    )
+    ),
   ];
 
   const container = {
@@ -91,7 +90,6 @@ export const Network = () => {
           emptyBg={true}
         />
       </BgImageContainer>
-      <Footer />
     </Flex>
   );
 };
