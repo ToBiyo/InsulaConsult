@@ -1,7 +1,13 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import { NavigationButtons } from "./NavigationButtons";
-export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
+import Aos from "aos";
+import "aos/dist/aos.css";
 
+Aos.init({
+  disable: "mobile",
+});
+
+export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
   const container = {
     w: "100%",
     padding: "50px 0",
@@ -16,6 +22,8 @@ export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
   const title = {
     fontSize: { base: "2.5rem", md: "3rem" },
     color: "orange.400",
+    fontFamily: "heading",
+    fontWeight: "normal",
   };
   const cardsContainer = {
     w: "80%",
@@ -27,10 +35,13 @@ export const CardsSection = ({ heading, path, data, Component, emptyBg }) => {
   };
   return (
     <Flex sx={container}>
-      <Heading sx={title}>{heading}</Heading>
+      <Heading sx={title} data-aos="fade-up" data-aos-duration="500">
+        {heading}
+      </Heading>
       <Flex sx={cardsContainer}>
-        {data.map((data,index) => (<Component data={data} i={index} />)
-        )}
+        {data.map((data, index) => (
+          <Component data={data} i={index} />
+        ))}
       </Flex>
       <NavigationButtons path={path} />
     </Flex>

@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 
-export const BackgroundImage = ({ src, children, inverted }) => {
+export const BgImageContainer = ({ src, children, inverted }) => {
   const container = {
     w: "100vw",
     position : "relative",

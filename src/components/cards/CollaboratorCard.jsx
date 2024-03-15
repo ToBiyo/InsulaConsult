@@ -1,8 +1,14 @@
 import { Flex, Box, Heading, Text, Image, Link } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-export const CollaboratorCard = ({ data }) => {
+Aos.init({
+  disable: "mobile",
+});
+
+export const CollaboratorCard = ({ data, i }) => {
   const { image, name, role, story, interests, linkedin } = data;
   const card = {
     maxWidth: "650px",
@@ -14,43 +20,47 @@ export const CollaboratorCard = ({ data }) => {
   };
   const nameHeading = {
     color: "orange",
-    fontSize: {base : "1.6rem",md : "1.8rem"},
+    fontSize: { base: "1.6rem", md: "1.8rem" },
   };
   const roleHeading = {
     color: "#fff",
-    fontSize: {base : "1.2rem", md : "1.4rem"},
+    fontFamily: "heading",
+    fontWeight: "normal",
+    fontSize: { base: "1.2rem", md: "1.4rem" },
     borderBottom: "2px solid",
     padding: "5px 0",
     borderColor: "orange.400",
   };
   const imageContainer = {
-    width: {base : "200px", md : "250px"},
-    h: {base : "200px", md : "250px"},
+    width: { base: "200px", md: "250px" },
+    h: { base: "200px", md: "250px" },
     borderRadius: "50%",
     overflow: "hidden",
     border: "5px solid #fff",
   };
   const profilePicture = {
-    width : "100%",
-    height : "100%"
+    width: "100%",
+    height: "100%",
   };
 
   const text = {
     color: "#fff",
-    textAlign : "center",
-    fontSize : {base : "0.9rem", md : "1rem"}
+    textAlign: "center",
+    fontSize: { base: "0.9rem", md: "1rem" },
+    fontFamily: "body",
   };
 
   const socialLink = {
-    fontSize : "45px",
-    color : "#fff",
-    ":hover" : {
-        color : "orange.300"
-    }
-  }
+    fontSize: "45px",
+    color: "#fff",
+    ":hover": {
+      color: "orange.300",
+    },
+  };
 
+  let AosEffect = i % 2 == 0 ? "fade-right" : "fade-left";
   return (
-    <Flex sx={card}>
+    <Flex sx={card} data-aos={AosEffect} data-aos-duration="800">
       <Box sx={imageContainer}>
         <Image sx={profilePicture} src={image}></Image>
       </Box>

@@ -1,10 +1,8 @@
-import { NavLink } from "react-router-dom"
-import { useTranslation } from "react-i18next"
-import { Flex, Button } from "@chakra-ui/react"
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Flex, Button } from "@chakra-ui/react";
 
-
-export const Menu = ({onHideMenu, footerMenu}) => {
-
+export const Menu = ({ onHideMenu, footerMenu }) => {
   const { t } = useTranslation("menu");
   //routes
 
@@ -27,21 +25,16 @@ export const Menu = ({onHideMenu, footerMenu}) => {
     outline: "none",
     ":hover": {
       bg: !footerMenu ? "orange.400" : "none",
-      color : !footerMenu ? "#fff" : "orange.400"
+      color: !footerMenu ? "#fff" : "orange.400",
     },
   };
   const MenuLinks = routes.map((link) => (
     <NavLink to={link.path} key={link.name}>
-      <Button sx={MenuButton} onClick={onHideMenu ? onHideMenu : ()=> ""}>
+      <Button sx={MenuButton} onClick={onHideMenu ? onHideMenu : () => ""}>
         {link.name}
       </Button>
     </NavLink>
   ));
 
-
-  return (
-    <>
-      {MenuLinks}
-    </>
-  )
-}
+  return <>{MenuLinks}</>;
+};

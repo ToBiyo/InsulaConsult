@@ -16,7 +16,7 @@ export const SkewBackground = ({ children, inverted, width, color }) => {
     borderBottom :  "1px solid #fff"
   };
   const background = {
-    flex: { base : "100%", sm : "100%", md : "80%", lg : "50%", xl : "40%"},
+    flex: { base : "100%", sm : "100%", md : "80%", lg : "65%", xl : "40%"},
     h: "100%",
     clipPath: inverted ? rightClipPath : leftCilpPath,
     bg: color ? color : "primary",

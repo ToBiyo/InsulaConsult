@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Flex, Heading } from "@chakra-ui/react";
 import { TextSection } from "../components/TextSection";
-import { BackgroundImage } from "../components/BackgroundImage";
+import { BgImageContainer } from "../components/BgImageContainer";
 import { Footer } from "../components/Footer";
 import { CardsSection } from "../components/CardsSection";
 import { CompanyCard } from "../components/cards/CompanyCard";
@@ -83,14 +83,14 @@ export const Network = () => {
         data={companiesData}
         Component={CompanyCard}
       />
-      <BackgroundImage src={background} inverted={true}>
+      <BgImageContainer src={background} inverted={true}>
         <CardsSection
           heading={t("collaborators_heading")}
           data={collaboratorsData}
           Component={CollaboratorCard}
           emptyBg={true}
         />
-      </BackgroundImage>
+      </BgImageContainer>
       <Footer />
     </Flex>
   );

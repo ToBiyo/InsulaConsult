@@ -12,7 +12,7 @@ export const JustifyContent = ({ children, inverted }) => {
 
   const leftPanel = {
     h: "100%",
-    width: { base: "100%", md: "80%", lg: "70%", xl: "55%", "2xl" : "45%" },
+    width: { base: "100%", md: "80%", lg: "70%", xl: "55%" },
     order: inverted ? 2 : 1,
     padding: "0 10px",
   };

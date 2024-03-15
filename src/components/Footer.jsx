@@ -20,6 +20,7 @@ export const Footer = ({ bg }) => {
     justifyContent: "center",
     flexDirection: "column",
     position: "relative",
+    fontFamily: "body",
   };
   const footerContainer = {
     w: { base: "90vw", sm: "80vw" },
@@ -27,7 +28,7 @@ export const Footer = ({ bg }) => {
     h: "auto",
     flexDir: { base: "column", md: "row" },
     justifyContent: { base: "center", md: "space-around" },
-    alignItems: {base : "center", md : "flex-start"},
+    alignItems: { base: "center", md: "flex-start" },
     borderBottom: "1px dotted",
     borderColor: "orange.400",
     padding: "100px 0",
@@ -51,6 +52,8 @@ export const Footer = ({ bg }) => {
     color: "orange.400",
     fontSize: { base: "1.6rem", md: "2rem" },
     marginBottom: "30px",
+    fontFamily: "heading",
+    fontWeight: "normal",
   };
   const contactsContainer = {
     flexDirection: "column",
@@ -89,7 +92,7 @@ export const Footer = ({ bg }) => {
         <Flex sx={quickLinksContainer}>
           <Heading sx={pageHeadings}>Quick Links</Heading>
           <Flex sx={linkContainer}>
-            <Menu footerMenu={true}/>
+            <Menu footerMenu={true} />
           </Flex>
         </Flex>
         <Flex sx={contactsContainer}>

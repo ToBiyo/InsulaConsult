@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Flex } from "@chakra-ui/react";
-import { BackgroundImage } from "../components/BackgroundImage";
+import { BgImageContainer } from "../components/BgImageContainer";
 import { TextSection } from "../components/TextSection";
 import { Footer } from "../components/Footer";
 import { DetailsPageContainer } from "../components/DetailsPageContainer";
@@ -21,27 +21,27 @@ export const Projects = () => {
 
   const projectsData = [
     {
-      logo: fasterLogo,
-      heading: t("project_1_heading"),
-      description: t("project_1_description"),
+      logo: fourmLogo,
+      heading: t("fourMin_heading"),
+      description: t("fourMin_description"),
       background: faster,
     },
     {
-      logo: gTeachLogo,
-      heading: t("project_2_heading"),
-      description: t("project_2_description"),
+      logo: fasterLogo,
+      heading: t("faster_heading"),
+      description: t("faster_description"),
       background: goldenTeach,
     },
     {
-      logo: cTourLogo,
-      heading: t("project_3_heading"),
-      description: t("project_3_description"),
+      logo: gTeachLogo,
+      heading: t("goldT_heading"),
+      description: t("goldT_description"),
       background: ctour,
     },
     {
-      logo: fourmLogo,
-      heading: t("project_4_heading"),
-      description: t("project_4_description"),
+      logo: cTourLogo,
+      heading: t("cTour_heading"),
+      description: t("cTour_description"),
       background: fourMinutes,
     },
   ];
@@ -59,9 +59,9 @@ export const Projects = () => {
   
   return (
     <Flex sx={container}>
-      <BackgroundImage>
-        <TextSection h={"h2"} heading={"Projects"}></TextSection>
-      </BackgroundImage>
+      <BgImageContainer>
+        <TextSection h={"h2"} heading={t("projects_head_heading")} text={t("projects_head_description")} />
+      </BgImageContainer>
       <DetailsPageContainer data={projectsData} Component={ProjectsSectionsDetails} />
       <Footer />
     </Flex>

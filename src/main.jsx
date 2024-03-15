@@ -11,6 +11,8 @@ import {
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import "./i18n.js";
+import "@fontsource/source-serif-pro";
+import "@fontsource/source-sans-pro";
 //routes
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -18,14 +20,15 @@ import { Services } from "./pages/Services";
 import { Projects } from "./pages/Projects";
 import { Network } from "./pages/Network";
 
-
-const colors = {
-  primary : '#012d5e'
-
-
-}
-
-const theme = extendTheme({colors});
+const theme = extendTheme({
+  colors: {
+    primary: "#012d5e",
+  },
+  fonts: {
+    heading: "'Source Serif Pro', serif",
+    body: "'Source Sans Pro', sans-serif",
+  },
+});
 
 const router = createBrowserRouter(
   createRoutesFromElements(

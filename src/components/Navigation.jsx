@@ -5,16 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "./Menu";
-import { LanguageSwitch } from "./LanguageSwitch";
+import { LanguageSwitchBtn } from "./LanguageSwitchBtn";
 
 //resources
 import logo from "../assets/images/logo.svg";
 
 export const Navigation = () => {
-  
   const [displayMenu, setDisplayMenu] = useState(false);
-
-  
 
   const nav = {
     bg: { base: displayMenu ? "primary" : "none", md: "none" },
@@ -25,6 +22,7 @@ export const Navigation = () => {
     position: { base: displayMenu ? "fixed" : "absolute" },
     top: 0,
     zIndex: 3,
+    fontFamily: "body",
   };
   const menuContainer = {
     w: "80%",
@@ -43,7 +41,6 @@ export const Navigation = () => {
     display: { base: displayMenu ? "flex" : "none", md: "flex" },
     zIndex: { base: -1, md: 3 },
   };
-  
 
   const logoImg = {
     w: "60px",
@@ -64,8 +61,6 @@ export const Navigation = () => {
     setDisplayMenu(false);
   };
 
-  
-
   return (
     <Flex sx={nav} as={"nav"}>
       <Flex sx={menuContainer}>
@@ -75,8 +70,8 @@ export const Navigation = () => {
           </NavLink>
         </Flex>
         <Flex sx={linksContainer}>
-          <Menu onHideMenu={hideMenu}/>
-          <LanguageSwitch onClickHandler={hideMenu} />
+          <Menu onHideMenu={hideMenu} />
+          <LanguageSwitchBtn onClickHandler={hideMenu} />
         </Flex>
         <Flex onClick={clickHandler} sx={smartMenuBtn}>
           <FontAwesomeIcon icon={displayMenu ? faXmark : faBars} />
