@@ -1,5 +1,4 @@
 import { Flex, Box, Image, Link } from "@chakra-ui/react";
-import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -23,6 +22,10 @@ export const CompanyCard = ({ data, i }) => {
     borderRadius: "50%",
     position: "relative",
     border: "3px solid orange",
+    transition: "all ease-in-out 0.3s",
+    ":hover": {
+      transform: "scale(1.1)",
+    },
   };
   const logoImage = {
     position: "absolute",

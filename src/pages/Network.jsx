@@ -1,95 +1,91 @@
 import { useTranslation } from "react-i18next";
 import { Flex, Heading } from "@chakra-ui/react";
-import { TextSection } from "../components/TextSection";
-import { BgImageContainer } from "../components/BgImageContainer";
-import { CardsSection } from "../components/CardsSection";
+import { TextSection } from "../layout/TextSection";
+import TextContent from "../components/TextContent";
+import { CardSection } from "../layout/CardSection";
+import { CardsContainer } from "../components/CardsContainer";
 import { CompanyCard } from "../components/cards/CompanyCard";
-import { CollaboratorCard } from "../components/cards/CollaboratorCard";
+import { CollaboratorsCard } from "../components/cards/CollaboratorsCard";
 
-//data structure
-import { companiesCardsData, collaboratorsCardsData } from "../data/data";
-
-//asstets
+//assets
 import banner from "../assets/images/Network/banner.jpg";
 import background from "../assets/images/Network/background.jpg";
 import euro4business from "../assets/images/Network/e4b.png";
 import quartoTempo from "../assets/images/Network/Quartotempo.webp";
 import sis from "../assets/images/Network/sis.png";
 import zinev from "../assets/images/Network/zinev.jpg";
-import cubufo from "../assets/images/Network/Cubufo.png";
+/* import cubufo from "../assets/images/Network/Cubufo.png";*/
 import coll1 from "../assets/images/Network/coll1.jpg";
 import coll2 from "../assets/images/Network/coll2.jpg";
 
-export const Network = () => {
+export function Network() {
   const { t } = useTranslation("network");
+
   const companiesData = [
-    new companiesCardsData(
-      euro4business,
-      t("e_for_business_description"),
-      "https://www.e4business.eu/"
-    ),
-    new companiesCardsData(
-      quartoTempo,
-      t("4tempo_description"),
-      "https://www.quartotempofirenze.it/"
-    ),
-    new companiesCardsData(
-      sis,
-      t("sis_description"),
-      "https://sinnovations.org/"
-    ),
-    new companiesCardsData(zinev, t("zinev_description"), "https://zatbg.org/"),
-    //new companiesCardsData(cubufo, t("cubufo_description"), "https://cubufo.cubufoundation.com/")
+    { src: euro4business, link: "https://www.e4business.eu/" },
+    { src: quartoTempo, link: "https://www.quartotempofirenze.it/" },
+    { src: sis, link: "https://sinnovations.org/" },
+    { src: zinev, link: "https://zatbg.org/" },
   ];
 
   const collaboratorsData = [
-    new collaboratorsCardsData(
-      coll1,
-      "Aevin Eslami",
-      t("arvin_role"),
-      t("arvin_story"),
-      t("arvin_interests"),
-      "https://www.linkedin.com/in/arvin-eslami/?locale=en_US "
-    ),
-    new collaboratorsCardsData(
-      coll2,
-      "Alessandro Biscione",
-      t("biscione_role"),
-      t("biscione_story"),
-      t("biscione_interests"),
-      "https://www.linkedin.com/in/alessandro-biscione/"
-    ),
+    {
+      image: coll1,
+      name: "Aevin Eslami",
+      role: t("arvin_role"),
+      story: t("arvin_story"),
+      interests: t("arvin_interests"),
+      linkedin: "https://www.linkedin.com/in/arvin-eslami/?locale=en_US",
+    },
+    {
+      image: coll2,
+      name: "Alessandro Biscione",
+      role: t("biscione_role"),
+      story: t("biscione_story"),
+      interests: t("biscione_interests"),
+      linkedin: "https://www.linkedin.com/in/alessandro-biscione/",
+    },
   ];
 
   const container = {
-    w: "100%",
-    h: "auto",
     flexDir: "column",
-    bgImage: `url(${banner})`,
-    bgPosition: "bottom",
-    bgSize: "cover",
-    bgAttachment: "fixed",
+  };
+  const collabContainer = {
+    margin: "0 auto",
+    w: "80%",
+    justifyContent: "space-between",
+  };
+  const title = {
+    fontSize: "4rem",
+    alignSelf: "center",
+    color: "orange.400",
+    fontFamily: "title",
+    marginBottom: "50px",
   };
 
   return (
     <Flex sx={container}>
-      <TextSection
-        heading={t("network_heading")}
-        text={t("network_description")}
-      ></TextSection>
-      <CardsSection
-        heading={t("companies_section_heading")}
-        data={companiesData}
-        Component={CompanyCard}
-      />
-      <BgImageContainer src={background} inverted={true}>
-        <CardsSection
-          heading={t("collaborators_heading")}
-          data={collaboratorsData}
-          Component={CollaboratorCard}
-          emptyBg={true}
+      <TextSection img={banner}>
+        <TextContent
+          heading={t("network_heading")}
+          text={t("network_description")}
         />
-      </BgImageContainer>
+      </TextSection>
+      <CardSection heading={t("companies_section_heading")}>
+        <CardsContainer>
+          {companiesData.map((data, index) => (
+            <CompanyCard data={data} i={index} />
+          ))}
+        </CardsContainer>
+      </CardSection>
+      <TextSection img={background} heading>
+        <Heading sx={title}>{t("collaborators_heading")}</Heading>
+        <Flex sx={collabContainer}>
+          {collaboratorsData.map((data, index) => (
+            <CollaboratorsCard data={data} i={index} />
+          ))}
+        </Flex>
+      </TextSection>
     </Flex>
   );
-};
+}

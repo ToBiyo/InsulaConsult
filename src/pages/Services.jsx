@@ -1,12 +1,12 @@
 import { Flex } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { TextSection } from "../components/TextSection";
-import { DetailsPageContainer } from "../components/DetailsPageContainer";
-import { ServiceSectionContent } from "../components/ServiceSectionContent";
-//assets
-import banner from "../assets/images/Servizi/banner3.jpg";
-export const Services = () => {
-  const { t } = useTranslation("services");
+import { TextSection } from "../layout/TextSection";
+import TextContent from "../components/TextContent";
+import { ServicesDetails } from "../components/ServicesDetails";
+//asstes
+import banner3 from "../assets/images/Servizi/banner3.jpg";
+export function Services() {
+  const { t } = useTranslation(["services", "buttons"]);
 
   const servicesData = [
     {
@@ -72,26 +72,35 @@ export const Services = () => {
   ];
 
   const container = {
-    width: "100%",
-    h: "auto",
     flexDir: "column",
-    backgroundImage: `url(${banner})`,
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
-    backgroundPosition: "bottom",
+    bgImage: `url(${banner3})`,
+    bgSize: "cover",
+    bgAttachment: "fixed",
   };
-
   return (
     <Flex sx={container}>
-      <TextSection
-        h={"h2"}
-        heading={t("service_head_title")}
-        text={t("service_head_description")}
-      ></TextSection>
-      <DetailsPageContainer
-        data={servicesData}
-        Component={ServiceSectionContent}
-      />
+      <TextSection>
+        <TextContent
+          heading={t("services:service_head_title")}
+          text={t("services:service_head_description")}
+          buttonText={t("buttons:get_in_touch_btn")}
+        />
+      </TextSection>
+      {servicesData.map((data, index) => {
+        if (index % 2 === 0) {
+          return (
+            <TextSection inverted={true}>
+              <ServicesDetails data={data} inverted={true} />
+            </TextSection>
+          );
+        } else {
+          return (
+            <TextSection>
+              <ServicesDetails data={data} />
+            </TextSection>
+          );
+        }
+      })}
     </Flex>
   );
-};
+}

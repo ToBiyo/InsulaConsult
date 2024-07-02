@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-export const LanguageSwitchBtn = ({ color, onClickHandler }) => {
+export function LanguageSwitch({ color, onClickHandler }) {
   const [displayed, setDisplayed] = useState("none");
 
   const AccordionBox = {
@@ -98,4 +98,4 @@ export const LanguageSwitchBtn = ({ color, onClickHandler }) => {
       </Flex>
     </Flex>
   );
-};
+}

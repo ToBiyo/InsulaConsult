@@ -1,9 +1,7 @@
-//chakra
 import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { sectionText } from "../../utitlities/constantStyles";
 Aos.init({
   disable: "mobile",
 });
@@ -14,7 +12,6 @@ export const ServiceCard = ({ data, i }) => {
   const Card = {
     w: "300px",
     flexDir: "column",
-    color: "#fff",
     gap: "20px",
     alignItems: "center",
     margin: "20px 0",
@@ -33,13 +30,14 @@ export const ServiceCard = ({ data, i }) => {
     position: "relative",
     bg: "#fff",
     borderRadius: "50%",
-    border: "1px solid orange",
+    border: "2px solid",
+    borderColor: "orange.400",
   };
   const ServiceHeading = {
-    fontSize: { base: "1.1rem", md: "1.3rem" },
-    color: "orange.400",
+    fontSize: { base: "1.1rem", md: "1.4rem" },
+    color: "primary",
     textAlign: "center",
-    fontFamily: "heading",
+    fontFamily: "title",
     fontWeight: "normal",
   };
   const subservicesBox = {
@@ -53,11 +51,10 @@ export const ServiceCard = ({ data, i }) => {
 
   const subservicesContent = subservices.map((subservice) => (
     <Text
-      sx={sectionText}
       key={subservice}
       margin={"5px 0"}
-      fontSize={{ base: "1rem", md: "1.05rem" }}
-      fontFamily={"body"}
+      fontSize={{ base: "1rem", md: "1.3rem" }}
+      fontFamily={"text"}
     >
       <CheckIcon color={"orange.400"} width={"15px"} margin={" 0 5px"} />
       {subservice}

@@ -1,6 +1,5 @@
 //chakra
 import { Flex, Image, Text, Box } from "@chakra-ui/react";
-import { sectionText } from "../../utitlities/constantStyles";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -17,6 +16,8 @@ export const ProjectCard = ({ data, i }) => {
     alignItems: "center",
     gap: "30px",
     margin: "20px 0",
+    color: "#000",
+    textAlign: "center",
   };
   const logoContainer = {
     w: { base: "120px", md: "180px" },
@@ -28,13 +29,14 @@ export const ProjectCard = ({ data, i }) => {
   };
 
   const logoImage = {
-    position: "absolute",
+    position: "relative",
     display: "block",
     width: { base: "100px", md: "150px" },
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
+
   let AosEffect = i % 2 == 0 ? "fade-up" : "fade-down";
   return (
     <Flex
@@ -48,7 +50,9 @@ export const ProjectCard = ({ data, i }) => {
       <Box sx={logoContainer}>
         <Image src={logo} sx={logoImage} />
       </Box>
-      <Text sx={sectionText}>{description}</Text>
+      <Text fontFamily={"text"} fontSize={"1.2rem"}>
+        {description}
+      </Text>
     </Flex>
   );
 };

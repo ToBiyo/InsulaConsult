@@ -1,41 +1,42 @@
+import { Flex, Heading } from "@chakra-ui/react";
+import { TextSection } from "../layout/TextSection";
 import { useTranslation } from "react-i18next";
-import { Flex } from "@chakra-ui/react";
-import { TextSection } from "../components/TextSection";
-import { DetailsPageContainer } from "../components/DetailsPageContainer";
-import { AboutSectionContent } from "../components/AboutSectionContent";
+import TextContent from "../components/TextContent";
 
 //assets
 import banner from "../assets/images/About/banner.jpg";
-export const About = () => {
-  const { t } = useTranslation("about");
 
-  const aboutData = [
-    {
-      title: t("about_description_title"),
-      description: t("about_description"),
-    },
-    {
-      title: t("about_mission_title"),
-      description: t("about_mission_description"),
-    },
-  ];
-  const box = {
-    flexDir: "column",
-    w: "100%",
-    h: "auto",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed",
+export function About() {
+  const { t } = useTranslation(["about", "buttons"]);
+  const container = {
     bgImage: `url(${banner})`,
+    flexDir: "column",
+    bgAttachment: "fixed",
   };
-
   return (
-    <Flex sx={box}>
-      <TextSection
-        h={"h2"}
-        heading={t("about_head_title")}
-        text={t("about_head_description")}
-      ></TextSection>
-      <DetailsPageContainer data={aboutData} Component={AboutSectionContent} />
+    <Flex sx={container}>
+      <TextSection>
+        <TextContent
+          heading={t("about:about_head_title")}
+          text={t("about:about_head_description")}
+          buttonText={t("buttons:get_in_touch_btn")}
+        />
+      </TextSection>
+      <TextSection inverted={true}>
+        <TextContent
+          inverted={true}
+          heading={t("about:about_description_title")}
+          text={t("about:about_description")}
+          buttonText={t("buttons:get_in_touch_btn")}
+        />
+      </TextSection>
+      <TextSection>
+        <TextContent
+          heading={t("about:about_mission_title")}
+          text={t("about:about_mission_description")}
+          buttonText={t("buttons:get_in_touch_btn")}
+        />
+      </TextSection>
     </Flex>
   );
-};
+}

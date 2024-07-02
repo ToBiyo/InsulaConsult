@@ -1,10 +1,8 @@
-import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Flex, Button } from "@chakra-ui/react";
-
-export const Menu = ({ onHideMenu, footerMenu }) => {
+import { Button } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
+export default function Menu({ onHideMenu, footerMenu }) {
   const { t } = useTranslation("menu");
-  //routes
 
   const routes = [
     { path: "/InsulaConsult/", name: t("link_0") },
@@ -19,6 +17,7 @@ export const Menu = ({ onHideMenu, footerMenu }) => {
     color: "#fff",
     h: "45px",
     fontWeight: "normal",
+    fontFamily: "body",
     borderRadius: "10px",
     border: "none",
     margin: { base: "0px 0", md: 0 },
@@ -28,6 +27,7 @@ export const Menu = ({ onHideMenu, footerMenu }) => {
       color: !footerMenu ? "#fff" : "orange.400",
     },
   };
+
   const MenuLinks = routes.map((link) => (
     <NavLink to={link.path} key={link.name}>
       <Button sx={MenuButton} onClick={onHideMenu ? onHideMenu : () => ""}>
@@ -35,6 +35,5 @@ export const Menu = ({ onHideMenu, footerMenu }) => {
       </Button>
     </NavLink>
   ));
-
   return <>{MenuLinks}</>;
-};
+}

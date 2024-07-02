@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 //chakra
 import { Flex, Heading, Text } from "@chakra-ui/react";
 //font awesome
-import { Menu } from "./Menu";
+import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -10,17 +10,18 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-export const Footer = ({ bg }) => {
+export const Footer = () => {
   const { t } = useTranslation();
   const Container = {
-    w: "100vw",
-    minHeight: "100vh",
+    w: "100%",
+    minHeight: "auto",
     bg: "primary",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
     position: "relative",
     fontFamily: "body",
+    borderTop: "2px solid orange",
   };
   const footerContainer = {
     w: { base: "90vw", sm: "80vw" },
@@ -67,7 +68,6 @@ export const Footer = ({ bg }) => {
   };
   const copyrightContainer = {
     color: "#fff",
-    padding: "0 10px",
     marginTop: "20px",
     w: { base: "90vw", sm: "80vw", md: "70vw", lg: "50vw", xl: "40vw" },
     alignItems: "center",

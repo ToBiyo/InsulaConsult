@@ -8,7 +8,7 @@ Aos.init({
   disable: "mobile",
 });
 
-export const CollaboratorCard = ({ data, i }) => {
+export const CollaboratorsCard = ({ data, i }) => {
   const { image, name, role, story, interests, linkedin } = data;
   const card = {
     maxWidth: "650px",
