@@ -38,7 +38,7 @@ export default function Navigation() {
     color: "#fff",
     marginRight: "10%",
     h: "100%",
-    alignItems: { base: displayMenu ? "flex-start" : "center" },
+    alignItems: { base: displayMenu ? "flex-start" : "center", md: "center" },
     fontSize: "2rem",
     cursor: "pointer",
     display: { base: "flex", md: "none" },
@@ -48,7 +48,7 @@ export default function Navigation() {
     display: { base: displayMenu ? "flex" : "none", md: "flex" },
     flexDir: { base: "column", md: "row" },
     justifyContent: { base: "center", md: "flex-start" },
-    alignItems: { base: "center", md: "flex-start" },
+    alignItems: { base: "center", md: "center" },
   };
   return (
     <Flex as={"nav"} sx={navigationContainer}>
