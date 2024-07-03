@@ -1,12 +1,6 @@
 import { Flex, Box, Heading, Text, Image, Link } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Aos from "aos";
-import "aos/dist/aos.css";
-
-Aos.init({
-  disable: "mobile",
-});
 
 export const CollaboratorsCard = ({ data, i }) => {
   const { image, name, role, story, interests, linkedin } = data;
@@ -57,10 +51,8 @@ export const CollaboratorsCard = ({ data, i }) => {
       color: "orange.300",
     },
   };
-
-  let AosEffect = i % 2 == 0 ? "fade-right" : "fade-left";
   return (
-    <Flex sx={card} data-aos={AosEffect} data-aos-duration="800">
+    <Flex sx={card}>
       <Box sx={imageContainer}>
         <Image sx={profilePicture} src={image}></Image>
       </Box>

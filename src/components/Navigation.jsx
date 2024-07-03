@@ -21,7 +21,7 @@ export default function Navigation() {
 
   const navigationContainer = {
     bg: { base: displayMenu ? "primary" : "none", md: "none" },
-    w: "80%",
+    w: { base: "100%", md: "80%" },
     h: { base: displayMenu ? "100%" : "60px", md: "60px" },
     justifyContent: "space-between",
     alignIems: "center",
@@ -32,20 +32,30 @@ export default function Navigation() {
   };
   const logoImage = {
     w: "60px",
+    marginLeft: { base: "20%" },
   };
   const smartMenuBtn = {
     color: "#fff",
-    alignItems: "center",
+    marginRight: "10%",
+    h: "100%",
+    alignItems: { base: displayMenu ? "flex-start" : "center" },
     fontSize: "2rem",
     cursor: "pointer",
     display: { base: "flex", md: "none" },
+  };
+
+  const menuContainer = {
+    display: { base: displayMenu ? "flex" : "none", md: "flex" },
+    flexDir: { base: "column", md: "row" },
+    justifyContent: { base: "center", md: "flex-start" },
+    alignItems: { base: "center", md: "flex-start" },
   };
   return (
     <Flex as={"nav"} sx={navigationContainer}>
       <NavLink to="/InsulaConsult/">
         <Image src={logo} sx={logoImage} />
       </NavLink>
-      <Flex h={"60px"} alignItems={"center"}>
+      <Flex sx={menuContainer}>
         <Menu onHideMenu={hideMenu} />
         <LanguageSwitch onClickHandler={hideMenu} />
       </Flex>

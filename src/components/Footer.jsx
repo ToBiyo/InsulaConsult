@@ -41,7 +41,7 @@ export const Footer = () => {
     justifyContent: "center",
     alignItems: "center",
     fontSize: { base: "0.9rem", md: "1rem" },
-    textAlign: { base: "center" },
+    /* textAlign: { base: "center" }, */
   };
   const linkContainer = {
     w: "100%",
@@ -56,6 +56,7 @@ export const Footer = () => {
     marginBottom: "30px",
     fontFamily: "heading",
     fontWeight: "normal",
+    textAlign: "center",
   };
   const contactsContainer = {
     flexDirection: "column",

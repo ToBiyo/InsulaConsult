@@ -12,7 +12,7 @@ export function CardSection({ heading, children, path, blue }) {
     bg: "whitesmoke",
   };
   const title = {
-    fontSize: "4rem",
+    fontSize: { base: "3rem", lg: "4rem" },
     color: "primary",
     fontFamily: "title",
   };

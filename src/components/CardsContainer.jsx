@@ -5,7 +5,8 @@ export function CardsContainer({ children }) {
   const cardsContainer = {
     w: "70%",
     margin: "0 auto",
-    justifyContent: "space-between",
+    justifyContent: { base: "center", "2xl": "space-between" },
+    flexWrap: "wrap",
   };
 
   return <Flex sx={cardsContainer}>{children}</Flex>;

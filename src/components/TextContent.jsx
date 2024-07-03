@@ -12,21 +12,24 @@ export default function TextContent({
   const TextContainer = {
     display: "flex",
     flexDir: "column",
-    width: "40%",
+    width: { base: "80%", lg: "50%", xl: "40%" },
     margin: "0 10%",
     gap: "40px",
+    alignItems: { base: "center", md: "flex-start" },
   };
   const textHeading = {
     color: "orange.400",
-    fontSize: "4rem",
+    fontSize: { base: "3rem", lg: "4rem" },
     fontWeight: "600",
     fontFamily: "title",
+    textAlign: { base: "center", md: "inherit" },
   };
   const textParagraph = {
-    color: inverted ? "primary" : "#fff",
+    color: inverted ? "#000" : "#fff",
     fontFamily: "text",
     fontWeight: "200",
-    fontSize: "1.2rem",
+    fontSize: { base: "1rem", md: "1.2rem" },
+    textAlign: { base: "center", md: "inherit" },
   };
   return (
     <Flex sx={TextContainer}>

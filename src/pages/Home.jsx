@@ -36,6 +36,7 @@ export function Home() {
     new servicesCardsData(management, t("management_service"), [
       t("management_subservice_0"),
       t("management_subservice_1"),
+      t("management_subservice_2"),
     ]),
     new servicesCardsData(project, t("project_service"), [
       t("project_subservice_0"),

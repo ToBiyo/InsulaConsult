@@ -55,10 +55,12 @@ export function Network() {
   const collabContainer = {
     margin: "0 auto",
     w: "80%",
-    justifyContent: "space-between",
+    justifyContent: { base: "center", md: "space-between" },
+    flexWrap: "wrap",
+    gap: { base: "50px" },
   };
   const title = {
-    fontSize: "4rem",
+    fontSize: { base: "3rem", md: "4rem" },
     alignSelf: "center",
     color: "orange.400",
     fontFamily: "title",

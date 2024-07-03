@@ -8,9 +8,9 @@ export const ProjectsDetails = ({ data, inverted }) => {
     flexDir: "column",
     color: inverted ? "#000" : "#fff",
     h: "100%",
-    w: "40%",
+    w: { base: "80%", lg: "40%" },
     justifyContent: "center",
-    alignItems: "",
+    alignItems: { base: "center", lg: "flex-start" },
     gap: "30px",
     padding: "0 20px",
     margin: "0 10%",
@@ -18,13 +18,13 @@ export const ProjectsDetails = ({ data, inverted }) => {
   const title = {
     fontSize: { base: "1.3rem", md: "1.8rem" },
     color: inverted ? "primary" : "orange.400",
-    textAlign: { base: "center", md: "left" },
+    textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
     fontWeight: "normal",
   };
   const text = {
     fontSize: { base: "1rem", md: "1.2rem" },
-    textAlign: { base: "center", md: "left" },
+    textAlign: { base: "center", lg: "left" },
     fontFamily: "text",
   };
   const logoContainer = {
