@@ -9,6 +9,7 @@ export function CardSection({ heading, children, path, blue }) {
     justifyContent: "center",
     alignItems: "center",
     padding: "40px 0",
+    bg: "whitesmoke",
   };
   const title = {
     fontSize: "4rem",

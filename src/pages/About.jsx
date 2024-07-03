@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 import TextContent from "../components/TextContent";
 
 //assets
-import banner from "../assets/images/About/banner.jpg";
+import about from "../assets/images/Home/about.png";
 
 export function About() {
   const { t } = useTranslation(["about", "buttons"]);
   const container = {
-    bgImage: `url(${banner})`,
+    bgImage: `url(${about})`,
     flexDir: "column",
     bgAttachment: "fixed",
   };
