@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { TextSection } from "../layout/TextSection";
 import { CardSection } from "../layout/CardSection";
@@ -70,6 +71,11 @@ export function Home() {
       t("home:project4_description")
     ),
   ];
+
+  //counter to react router that remembers current scroll position on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

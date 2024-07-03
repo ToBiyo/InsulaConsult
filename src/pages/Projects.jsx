@@ -1,7 +1,8 @@
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import { TextSection } from "../layout/TextSection";
 import TextContent from "../components/TextContent";
-import { useTranslation } from "react-i18next";
 
 //asstes
 import banner from "../assets/images/Progetti/banner.jpg";
@@ -41,7 +42,13 @@ export function Projects() {
     flexDir: "column",
     bgImage: `url(${banner})`,
     bgAttachment: "fixed",
+    bgSize: "cover",
   };
+
+  //counter to react router that remembers current scroll position on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Flex sx={container}>

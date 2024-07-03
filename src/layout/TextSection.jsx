@@ -7,6 +7,7 @@ export function TextSection({ img, inverted, children }) {
     bgImage: `url(${img})`,
     bgPosition: "bottom",
     bgSize: "cover",
+    bgRepeat: "none",
     bgAttachment: "fixed",
     justifyContent: "space-between",
   };

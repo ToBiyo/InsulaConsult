@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { TextSection } from "../layout/TextSection";
@@ -77,6 +78,12 @@ export function Services() {
     bgSize: "cover",
     bgAttachment: "fixed",
   };
+
+  //counter to react router that remembers current scroll position on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Flex sx={container}>
       <TextSection>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Flex, Heading } from "@chakra-ui/react";
 import { TextSection } from "../layout/TextSection";
@@ -14,7 +15,7 @@ import euro4business from "../assets/images/Network/e4b.png";
 import quartoTempo from "../assets/images/Network/Quartotempo.webp";
 import sis from "../assets/images/Network/sis.png";
 import zinev from "../assets/images/Network/zinev.jpg";
-/* import cubufo from "../assets/images/Network/Cubufo.png";*/
+import cubufo from "../assets/images/Network/Cubufo.png";
 import coll1 from "../assets/images/Network/coll1.jpg";
 import coll2 from "../assets/images/Network/coll2.jpg";
 
@@ -26,6 +27,7 @@ export function Network() {
     { src: quartoTempo, link: "https://www.quartotempofirenze.it/" },
     { src: sis, link: "https://sinnovations.org/" },
     { src: zinev, link: "https://zatbg.org/" },
+    { src: cubufo, link: "https://cubufo.cubufoundation.com/" },
   ];
 
   const collaboratorsData = [
@@ -62,6 +64,11 @@ export function Network() {
     fontFamily: "title",
     marginBottom: "50px",
   };
+
+  //counter to react router that remembers current scroll position on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Flex sx={container}>
