@@ -9,7 +9,6 @@ import { CollaboratorsCard } from "../components/cards/CollaboratorsCard";
 
 //assets
 import network from "../assets/images/Home/network.png";
-import banner from "../assets/images/Network/banner.jpg";
 import background from "../assets/images/Network/background.jpg";
 import euro4business from "../assets/images/Network/e4b.png";
 import quartoTempo from "../assets/images/Network/Quartotempo.webp";
