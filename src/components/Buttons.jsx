@@ -2,14 +2,14 @@ import { Flex, Link, textDecoration } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export default function Buttons({ path, contact }) {
+export default function Buttons({ path, contact, primary }) {
   const { t } = useTranslation("buttons");
 
   const buttonsContainer = {
     gap: "30px",
   };
   const button = {
-    bg: "orange.400",
+    bg: primary ? "primary" : "orange.400",
     color: "#fff",
     fontSize: "1.1rem",
     h: "50px",
@@ -22,13 +22,13 @@ export default function Buttons({ path, contact }) {
     cursor: "pointer",
     ":hover": {
       textDecoration: "none",
-      bg: "orange.500",
+      bg: primary ? "blue.800" : "orange.300",
     },
   };
   return (
     <Flex sx={buttonsContainer}>
       {!contact && (
-        <Link sx={button} action={"mailto:arrufabio93@gmail.com"}>
+        <Link sx={button} href={"mailto:arrufabio93@gmail.com"}>
           {t("get_in_touch_btn")}
         </Link>
       )}

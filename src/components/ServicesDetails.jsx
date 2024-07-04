@@ -19,7 +19,16 @@ export function ServicesDetails({ data, inverted }) {
     color: inverted ? "primary" : "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
-    fontWeight: "normal",
+    fontWeight: "600",
+
+    ":after": {
+      content: '" "',
+      m: "10px 0 0 0",
+      width: "200px",
+      display: "block",
+      h: "5px",
+      bg: inverted ? "orange.400" : "#fff",
+    },
   };
   const subserviceContainer = {
     w: "100%",
@@ -31,10 +40,10 @@ export function ServicesDetails({ data, inverted }) {
   };
   const subHeading = {
     fontSize: { base: "1.3rem", md: "1.8rem" },
+    fontWeight: "600",
     color: "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
-    fontWeight: "normal",
   };
   const subText = {
     color: inverted ? "#000" : "#fff",
@@ -56,7 +65,7 @@ export function ServicesDetails({ data, inverted }) {
           <Text sx={subText}>{subservice.description}</Text>
         </Flex>
       ))}
-      <Buttons />
+      <Buttons primary={inverted} />
     </Flex>
   );
 }

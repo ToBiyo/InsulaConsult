@@ -21,7 +21,7 @@ export const CompanyCard = ({ data, i }) => {
     bg: "#fff",
     borderRadius: "50%",
     position: "relative",
-    border: "3px solid orange",
+    border: "2px solid orange",
     transition: "all ease-in-out 0.3s",
     ":hover": {
       transform: "scale(1.1)",

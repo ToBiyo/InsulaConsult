@@ -20,7 +20,7 @@ export const ProjectsDetails = ({ data, inverted }) => {
     color: inverted ? "primary" : "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
-    fontWeight: "normal",
+    fontWeight: "600",
   };
   const text = {
     fontSize: { base: "1rem", md: "1.2rem" },
@@ -52,7 +52,7 @@ export const ProjectsDetails = ({ data, inverted }) => {
       </Flex>
       <Heading sx={title}>{heading}</Heading>
       <Text sx={text}>{description}</Text>
-      <Buttons />
+      <Buttons primary={inverted} />
     </Flex>
   );
 };

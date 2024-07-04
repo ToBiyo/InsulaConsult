@@ -7,7 +7,7 @@ import { CardSection } from "../layout/CardSection";
 import { CardsContainer } from "../components/CardsContainer";
 import { CompanyCard } from "../components/cards/CompanyCard";
 import { CollaboratorsCard } from "../components/cards/CollaboratorsCard";
-
+import Buttons from "../components/Buttons";
 //assets
 import network from "../assets/images/Home/network.png";
 import background from "../assets/images/Network/background.jpg";
@@ -80,7 +80,7 @@ export function Network() {
           text={t("network_description")}
         />
       </TextSection>
-      <CardSection heading={t("companies_section_heading")}>
+      <CardSection heading={t("companies_section_heading")} primary={true}>
         <CardsContainer>
           {companiesData.map((data, index) => (
             <CompanyCard data={data} i={index} />
