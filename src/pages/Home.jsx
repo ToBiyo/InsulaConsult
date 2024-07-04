@@ -86,7 +86,11 @@ export function Home() {
           text={t("home:home_head_description")}
         />
       </TextSection>
-      <CardSection heading={t("service_heading")} path={"services"} blue={true}>
+      <CardSection
+        heading={t("service_heading")}
+        path={"services"}
+        contact={true}
+      >
         <CardsContainer>
           {servicesData.map((data, i) => (
             <ServiceCard data={data} i={i} />
@@ -98,6 +102,7 @@ export function Home() {
           heading={t("home:about_heading")}
           text={t("home:about_description")}
           path={"about"}
+          contact={true}
         />
       </TextSection>
       <CardSection heading={t("project_heading")} path={"projects"}>
@@ -112,6 +117,7 @@ export function Home() {
           heading={t("home:network_heading")}
           text={t("home:network_description")}
           path={"network"}
+          contact={true}
         />
       </TextSection>
     </>

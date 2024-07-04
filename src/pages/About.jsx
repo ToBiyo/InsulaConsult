@@ -26,7 +26,6 @@ export function About() {
         <TextContent
           heading={t("about:about_head_title")}
           text={t("about:about_head_description")}
-          buttonText={t("buttons:get_in_touch_btn")}
         />
       </TextSection>
       <TextSection inverted={true}>
@@ -34,14 +33,12 @@ export function About() {
           inverted={true}
           heading={t("about:about_description_title")}
           text={t("about:about_description")}
-          buttonText={t("buttons:get_in_touch_btn")}
         />
       </TextSection>
       <TextSection>
         <TextContent
           heading={t("about:about_mission_title")}
           text={t("about:about_mission_description")}
-          buttonText={t("buttons:get_in_touch_btn")}
         />
       </TextSection>
     </Flex>

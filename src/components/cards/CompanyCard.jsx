@@ -10,7 +10,7 @@ export const CompanyCard = ({ data, i }) => {
   const { src, link } = data;
   const card = {
     flexDir: "column",
-    w: "300px",
+    w: "250px",
     alignItems: "center",
     gap: "20px",
     margin: "20px 0",

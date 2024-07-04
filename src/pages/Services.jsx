@@ -90,7 +90,6 @@ export function Services() {
         <TextContent
           heading={t("services:service_head_title")}
           text={t("services:service_head_description")}
-          buttonText={t("buttons:get_in_touch_btn")}
         />
       </TextSection>
       {servicesData.map((data, index) => {

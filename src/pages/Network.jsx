@@ -87,7 +87,7 @@ export function Network() {
           ))}
         </CardsContainer>
       </CardSection>
-      <TextSection img={background} heading>
+      <TextSection img={background}>
         <Heading sx={title}>{t("collaborators_heading")}</Heading>
         <Flex sx={collabContainer}>
           {collaboratorsData.map((data, index) => (

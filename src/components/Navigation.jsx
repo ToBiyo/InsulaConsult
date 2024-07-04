@@ -32,12 +32,12 @@ export default function Navigation() {
   };
   const logoImage = {
     w: "60px",
-    marginLeft: { base: "20%" },
+    marginLeft: { base: "30%", md: "0" },
   };
   const smartMenuBtn = {
     color: "#fff",
-    marginRight: "10%",
     h: "100%",
+    marginRight: "10%",
     alignItems: { base: displayMenu ? "flex-start" : "center", md: "center" },
     fontSize: "2rem",
     cursor: "pointer",
@@ -45,11 +45,13 @@ export default function Navigation() {
   };
 
   const menuContainer = {
+    minW: "40%",
     display: { base: displayMenu ? "flex" : "none", md: "flex" },
     flexDir: { base: "column", md: "row" },
-    justifyContent: { base: "center", md: "flex-start" },
+    justifyContent: { base: "center", md: "space-around" },
     alignItems: { base: "center", md: "center" },
   };
+
   return (
     <Flex as={"nav"} sx={navigationContainer}>
       <NavLink to="/InsulaConsult/">

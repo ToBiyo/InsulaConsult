@@ -5,9 +5,8 @@ export default function TextContent({
   heading,
   text,
   path,
-  pathText,
-  buttonText,
   inverted,
+  contact,
 }) {
   const TextContainer = {
     display: "flex",
@@ -39,7 +38,7 @@ export default function TextContent({
       <Text as={"p"} sx={textParagraph}>
         {text}
       </Text>
-      <Buttons path={path} pathText={pathText} buttonText={buttonText} />
+      <Buttons path={path} contact={contact} blue={inverted} />
     </Flex>
   );
 }

@@ -15,7 +15,7 @@ export function ServicesDetails({ data, inverted }) {
     gap: "50px",
   };
   const heading = {
-    fontSize: { base: "2.2rem", md: "3rem" },
+    fontSize: { base: "2.2rem", md: "3.5rem" },
     color: inverted ? "primary" : "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
@@ -30,8 +30,8 @@ export function ServicesDetails({ data, inverted }) {
     borderBottom: "1px dotted orange",
   };
   const subHeading = {
-    fontSize: { base: "1.3rem", md: "1.4rem" },
-    color: inverted ? "orange.400" : "orange.300",
+    fontSize: { base: "1.3rem", md: "1.8rem" },
+    color: "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
     fontWeight: "normal",

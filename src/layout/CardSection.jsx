@@ -1,7 +1,7 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import Buttons from "../components/Buttons";
 
-export function CardSection({ heading, children, path, blue }) {
+export function CardSection({ heading, children, path, contact }) {
   const container = {
     minHeight: "70vh",
     flexDir: "column",
@@ -13,7 +13,7 @@ export function CardSection({ heading, children, path, blue }) {
   };
   const title = {
     fontSize: { base: "3rem", lg: "4rem" },
-    color: "primary",
+    color: "orange.400",
     fontFamily: "title",
   };
   return (
@@ -22,7 +22,7 @@ export function CardSection({ heading, children, path, blue }) {
         {heading}
       </Heading>
       {children}
-      <Buttons path={path} blue={blue} />
+      <Buttons path={path} contact={contact} />
     </Flex>
   );
 }

@@ -1,5 +1,11 @@
 //chakra
 import { Flex, Image, Text, Box } from "@chakra-ui/react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+Aos.init({
+  disable: "mobile",
+});
 
 export const ProjectCard = ({ data, i }) => {
   const { logo, description } = data;
@@ -30,9 +36,16 @@ export const ProjectCard = ({ data, i }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
+  let AosEffect = i % 2 == 0 ? "fade-up" : "fade-down";
 
   return (
-    <Flex sx={ProjectCard} className="projectCard" color={"#fff"}>
+    <Flex
+      sx={ProjectCard}
+      className="projectCard"
+      color={"#fff"}
+      data-aos={AosEffect}
+      data-aos-duration="800"
+    >
       <Box sx={logoContainer}>
         <Image src={logo} sx={logoImage} />
       </Box>
