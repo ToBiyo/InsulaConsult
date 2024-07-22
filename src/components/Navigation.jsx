@@ -38,6 +38,7 @@ export default function Navigation() {
     color: "#fff",
     h: "100%",
     marginRight: "10%",
+    marginTop: { base: displayMenu ? "15px" : "0" },
     alignItems: { base: displayMenu ? "flex-start" : "center", md: "center" },
     fontSize: "2rem",
     cursor: "pointer",

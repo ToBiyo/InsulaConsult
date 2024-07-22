@@ -18,7 +18,7 @@ export function TextSection({ img, inverted, children }) {
     bg: inverted
       ? {
           base: "rgba(245,245,245,1)",
-          lg: "linear-gradient(to left, rgba(245,245,245,1), rgba(245,245,245,1), rgba(255, 255, 255, 0.9), rgba(0,0,0,0.1))",
+          lg: "linear-gradient(to left, rgba(245,245,245,1), rgba(255, 255, 255, 0.95), rgba(0,0,0,0.1))",
         }
       : {
           base: "rgba(1, 45, 94, 0.8)",

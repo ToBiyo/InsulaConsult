@@ -12,9 +12,10 @@ export function CardSection({ heading, children, path, contact, primary }) {
     bg: "whitesmoke",
   };
   const title = {
-    fontSize: { base: "3rem", lg: "4rem" },
+    fontSize: { base: "3.5rem", lg: "4.5rem" },
     color: primary ? "primary" : "orange.400",
     fontFamily: "title",
+    fontWeight: "400",
   };
   return (
     <Flex sx={container} as={"section"}>

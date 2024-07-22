@@ -17,9 +17,9 @@ export default function TextContent({
     alignItems: { base: "center", md: "flex-start" },
   };
   const textHeading = {
-    color: "orange.400",
-    fontSize: { base: "3rem", lg: "4rem" },
-    fontWeight: "600",
+    color: inverted ? "primary" : "orange.400",
+    fontSize: { base: "3.5rem", lg: "4.5rem" },
+    fontWeight: "400",
     fontFamily: "title",
     textAlign: { base: "center", md: "inherit" },
   };
@@ -38,7 +38,7 @@ export default function TextContent({
       <Text as={"p"} sx={textParagraph}>
         {text}
       </Text>
-      <Buttons path={path} contact={contact} blue={inverted} />
+      <Buttons path={path} contact={contact} primary={inverted} />
     </Flex>
   );
 }

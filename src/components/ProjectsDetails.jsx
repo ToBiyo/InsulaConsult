@@ -16,11 +16,11 @@ export const ProjectsDetails = ({ data, inverted }) => {
     margin: "0 10%",
   };
   const title = {
-    fontSize: { base: "1.3rem", md: "1.8rem" },
+    fontSize: { base: "1.3rem", md: "1.9rem" },
     color: inverted ? "primary" : "orange.400",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
-    fontWeight: "600",
+    fontWeight: "400",
   };
   const text = {
     fontSize: { base: "1rem", md: "1.2rem" },

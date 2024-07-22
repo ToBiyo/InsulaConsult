@@ -55,16 +55,17 @@ export function Network() {
   const collabContainer = {
     margin: "0 auto",
     w: "80%",
-    justifyContent: { base: "center", md: "space-between" },
+    justifyContent: { base: "center" },
     flexWrap: "wrap",
     gap: { base: "50px" },
   };
   const title = {
-    fontSize: { base: "3rem", md: "4rem" },
+    fontSize: { base: "3.5rem", md: "4.5rem" },
     alignSelf: "center",
     color: "orange.400",
     fontFamily: "title",
     marginBottom: "50px",
+    fontWeight: "normal",
   };
 
   //counter to react router that remembers current scroll position on route change

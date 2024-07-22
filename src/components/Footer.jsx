@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 //chakra
 import { Flex, Heading, Text } from "@chakra-ui/react";
 //font awesome

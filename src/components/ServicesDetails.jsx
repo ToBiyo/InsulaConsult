@@ -16,10 +16,10 @@ export function ServicesDetails({ data, inverted }) {
   };
   const heading = {
     fontSize: { base: "2.2rem", md: "3.5rem" },
-    color: inverted ? "primary" : "orange.400",
+    color: inverted ? "primary" : "#fff",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
-    fontWeight: "600",
+    fontWeight: "400",
 
     ":after": {
       content: '" "',
@@ -27,7 +27,7 @@ export function ServicesDetails({ data, inverted }) {
       width: "200px",
       display: "block",
       h: "5px",
-      bg: inverted ? "orange.400" : "#fff",
+      bg: "orange.400",
     },
   };
   const subserviceContainer = {

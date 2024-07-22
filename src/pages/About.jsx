@@ -16,7 +16,7 @@ export function About() {
     bgSize: "cover",
   };
 
-  //counter to react router that remembers current scroll position on route change
+  //reset y position to react router that remembers current scroll position on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
