@@ -7,7 +7,7 @@ Aos.init({
 });
 
 export const ServiceCard = ({ data, i }) => {
-  const { img, title, subservices } = data;
+  const { img, title, subservices, alt } = data;
 
   const Card = {
     w: "300px",
@@ -70,7 +70,7 @@ export const ServiceCard = ({ data, i }) => {
       data-aos-duration={500}
     >
       <Box sx={logoContainer}>
-        <Image src={img} sx={serviceImage} />
+        <Image src={img} sx={serviceImage} alt={alt} />
       </Box>
 
       <Heading sx={ServiceHeading}>{title}</Heading>

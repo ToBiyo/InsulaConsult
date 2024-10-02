@@ -2,7 +2,7 @@ import Buttons from "./Buttons";
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
 
 export const ProjectsDetails = ({ data, inverted }) => {
-  const { logo, heading, description } = data;
+  const { logo, heading, description, alt } = data;
 
   const container = {
     flexDir: "column",
@@ -48,7 +48,7 @@ export const ProjectsDetails = ({ data, inverted }) => {
   return (
     <Flex sx={container}>
       <Flex sx={logoContainer}>
-        <Image sx={logoImage} src={logo} />
+        <Image sx={logoImage} src={logo} alt={alt} />
       </Flex>
       <Heading sx={title}>{heading}</Heading>
       <Text sx={text}>{description}</Text>

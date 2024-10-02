@@ -8,7 +8,7 @@ Aos.init({
 });
 
 export const ProjectCard = ({ data, i }) => {
-  const { logo, description } = data;
+  const { logo, description, alt } = data;
 
   const ProjectCard = {
     w: "300px",
@@ -47,7 +47,7 @@ export const ProjectCard = ({ data, i }) => {
       data-aos-duration="800"
     >
       <Box sx={logoContainer}>
-        <Image src={logo} sx={logoImage} />
+        <Image src={logo} sx={logoImage} alt={alt} />
       </Box>
       <Text fontFamily={"text"} fontSize={"1.2rem"}>
         {description}

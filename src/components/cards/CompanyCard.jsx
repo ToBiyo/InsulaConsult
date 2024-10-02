@@ -7,7 +7,7 @@ Aos.init({
 });
 
 export const CompanyCard = ({ data, i }) => {
-  const { src, link } = data;
+  const { src, link, alt } = data;
   const card = {
     flexDir: "column",
     w: "250px",
@@ -43,7 +43,7 @@ export const CompanyCard = ({ data, i }) => {
     <Flex sx={card} data-aos={AosEffect} data-aos-duration="800">
       <Link href={link} isExternal>
         <Box sx={logoContainer}>
-          <Image src={src} sx={logoImage} />
+          <Image src={src} sx={logoImage} alt={alt} />
         </Box>
       </Link>
     </Flex>

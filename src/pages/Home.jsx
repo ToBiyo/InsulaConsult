@@ -11,65 +11,83 @@ import { projectsCardsData } from "../data/data";
 import { servicesCardsData } from "../data/data";
 
 //assets
-import home from "../assets/images/Home/home.png";
-import about from "../assets/images/Home/about.png";
-import network from "../assets/images/Home/network.png";
+import home from "../assets/images/Home/home.webP";
+import about from "../assets/images/Home/about.webP";
+import network from "../assets/images/Home/network.webP";
 //services
 import consult from "../assets/images/Servizi/consult.svg";
 import management from "../assets/images/Servizi/management.svg";
 import project from "../assets/images/Servizi/project.svg";
 import comunication from "../assets/images/Servizi/comunication.svg";
 //assets projects
-import logo1 from "../assets/images/Progetti/logo1.png";
-import logo2 from "../assets/images/Progetti/logo2.png";
-import logo3 from "../assets/images/Progetti/logo3.png";
-import logo4 from "../assets/images/Progetti/logo4.png";
+import logo1 from "../assets/images/Progetti/logo1.webp";
+import logo2 from "../assets/images/Progetti/logo2.webp";
+import logo3 from "../assets/images/Progetti/logo3.webp";
+import logo4 from "../assets/images/Progetti/logo4.webp";
 
-export function Home() {
+export default function Home() {
   const { t } = useTranslation(["home", "buttons"]);
 
   const servicesData = [
-    new servicesCardsData(consult, t("consult_service"), [
-      t("consult_subservice_0"),
-      t("consult_subservice_1"),
-    ]),
-    new servicesCardsData(management, t("management_service"), [
-      t("management_subservice_0"),
-      t("management_subservice_1"),
-      t("management_subservice_2"),
-    ]),
-    new servicesCardsData(project, t("project_service"), [
-      t("project_subservice_0"),
-      t("project_subservice_1"),
-      t("project_subservice_2"),
-      t("project_subservice_3"),
-    ]),
-    new servicesCardsData(comunication, t("comunication_service"), [
-      t("comunication_subservice_0"),
-      t("comunication_subservice_1"),
-    ]),
+    new servicesCardsData(
+      consult,
+      t("consult_service"),
+      [t("consult_subservice_0"), t("consult_subservice_1")],
+      "Migliora la tua strategia di business"
+    ),
+    new servicesCardsData(
+      management,
+      t("management_service"),
+      [
+        t("management_subservice_0"),
+        t("management_subservice_1"),
+        t("management_subservice_2"),
+      ],
+      "Gestione del business plan"
+    ),
+    new servicesCardsData(
+      project,
+      t("project_service"),
+      [
+        t("project_subservice_0"),
+        t("project_subservice_1"),
+        t("project_subservice_2"),
+        t("project_subservice_3"),
+      ],
+      "Creazione e gestione del business plan"
+    ),
+    new servicesCardsData(
+      comunication,
+      t("comunication_service"),
+      [t("comunication_subservice_0"), t("comunication_subservice_1")],
+      "Gestione eventi e comunicazione deigitale"
+    ),
   ];
 
   const projectsData = [
     new projectsCardsData(
       logo1,
       t("home:project1_title"),
-      t("home:project1_description")
+      t("home:project1_description"),
+      "4-Minute Barriers logo"
     ),
     new projectsCardsData(
       logo2,
       t("home:project2_title"),
-      t("home:project2_description")
+      t("home:project2_description"),
+      "Faster logo"
     ),
     new projectsCardsData(
       logo3,
       t("home:project3_title"),
-      t("home:project3_description")
+      t("home:project3_description"),
+      "Golden Ratio Teaching Logo"
     ),
     new projectsCardsData(
       logo4,
       t("home:project4_title"),
-      t("home:project4_description")
+      t("home:project4_description"),
+      "C-Tour logo"
     ),
   ];
 

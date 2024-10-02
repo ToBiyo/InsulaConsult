@@ -5,8 +5,9 @@ import { TextSection } from "../layout/TextSection";
 import TextContent from "../components/TextContent";
 import { ServicesDetails } from "../components/ServicesDetails";
 //asstes
-import banner3 from "../assets/images/Servizi/banner3.jpg";
-export function Services() {
+import banner3 from "../assets/images/Servizi/banner3.webp";
+
+export default function Services() {
   const { t } = useTranslation(["services", "buttons"]);
 
   const servicesData = [
@@ -66,7 +67,7 @@ export function Services() {
         },
         {
           heading: t("subsrvc_31_h"),
-          description: t("subsrvc_12_desc"),
+          description: t("subsrvc_31_desc"),
         },
       ],
     },

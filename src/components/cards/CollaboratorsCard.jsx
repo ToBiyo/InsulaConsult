@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export const CollaboratorsCard = ({ data, i }) => {
-  const { image, name, role, story, interests, linkedin } = data;
+  const { image, name, role, story, interests, linkedin, alt } = data;
   const card = {
     maxWidth: "650px",
     flexDir: "column",
@@ -54,14 +54,14 @@ export const CollaboratorsCard = ({ data, i }) => {
   return (
     <Flex sx={card}>
       <Box sx={imageContainer}>
-        <Image sx={profilePicture} src={image}></Image>
+        <Image sx={profilePicture} src={image} alt={alt} />
       </Box>
       <Heading sx={nameHeading}>{name}</Heading>
       <Heading sx={roleHeading}>{role}</Heading>
       <Text sx={text}>{story}</Text>
       <Text sx={text}>{interests}</Text>
       <Flex>
-        <Link href={linkedin} sx={socialLink}>
+        <Link href={linkedin} sx={socialLink} target="_blank">
           <FontAwesomeIcon icon={faLinkedin} />
         </Link>
       </Flex>

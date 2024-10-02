@@ -1,5 +1,7 @@
 //react
 import { useState } from "react";
+//i18n
+import { useTranslation } from "react-i18next";
 //chakra
 import { Button, Flex } from "@chakra-ui/react";
 
@@ -7,12 +9,11 @@ import { Button, Flex } from "@chakra-ui/react";
 import i18next from "i18next";
 //font awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 export function LanguageSwitch({ color, onClickHandler }) {
   const [displayed, setDisplayed] = useState("none");
-
+  const { t } = useTranslation("menu");
   const AccordionBox = {
     display: "block",
     position: "relative",
@@ -22,22 +23,22 @@ export function LanguageSwitch({ color, onClickHandler }) {
   const subMenuPanel = {
     flexDir: "column",
     position: "absolute",
-    left: "-10px",
     display: displayed,
     fontFamily: "body",
   };
   const languageButton = {
     bg: "none",
     h: "45px",
-    /* bg: "none", */
     color: "#fff",
     outline: "none",
     border: "none",
+    fontFamily: "title",
+    fontWeight: "400",
+    display: "flex",
+    gap: "5px",
     ":hover": {
-      bg: "none",
-      color: "orange.300",
+      bg: "orange.400",
       border: "none",
-      outline: "none",
     },
   };
   const MenuButton = {
@@ -45,10 +46,11 @@ export function LanguageSwitch({ color, onClickHandler }) {
     width: "auto",
     height: "45px",
     display: "inline-block",
+    fontFamily: "text",
     fontSize: "16px",
     borderRadius: "10px",
     color: color || "#fff",
-    fontWeight: "normal",
+    fontWeight: "400",
     border: "none",
     outline: "none",
     ":hover": {
@@ -56,6 +58,7 @@ export function LanguageSwitch({ color, onClickHandler }) {
       bg: "orange.400",
     },
   };
+
   return (
     <Flex sx={AccordionBox}>
       <Button
@@ -68,10 +71,8 @@ export function LanguageSwitch({ color, onClickHandler }) {
           }
         }}
       >
-        <FontAwesomeIcon
-          icon={faGlobe}
-          style={{ fontSize: "20px", marginRight: "5px" }}
-        />
+        {t("link_5")}
+
         <FontAwesomeIcon icon={faCaretDown} fontSize={"15px"} />
       </Button>
       <Flex sx={subMenuPanel}>

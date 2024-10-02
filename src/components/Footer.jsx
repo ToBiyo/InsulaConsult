@@ -62,7 +62,7 @@ export const Footer = () => {
     alignItems: "center",
   };
   const contacts_box = {
-    flexDir: "column",
+    flexDir: { base: "column", md: "row", lg: "column" },
     gap: "20px",
     alignItems: "center",
   };
@@ -102,13 +102,28 @@ export const Footer = () => {
           <Heading sx={pageHeadings}>Contacts</Heading>
           <Flex sx={contacts_box}>
             <Flex sx={iconContainer}>
-              <FontAwesomeIcon icon={faLinkedin} />
+              <a
+                href="https://www.linkedin.com/in/matteo-curreli-b15562153/"
+                target="blank"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
             </Flex>
             <Flex sx={iconContainer}>
-              <FontAwesomeIcon icon={faFacebook} />
+              <a
+                href="https://www.facebook.com/profile.php?id=61565885225885"
+                target="blank"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
             </Flex>
             <Flex sx={iconContainer}>
-              <FontAwesomeIcon icon={faInstagram} />
+              <a
+                href="https://www.instagram.com/insulaconsulting?igsh=MXdvenU5b3pneWtwag=="
+                target="blank"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
             </Flex>
             <Flex sx={iconContainer}>
               <a

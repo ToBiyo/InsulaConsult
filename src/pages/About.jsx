@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import TextContent from "../components/TextContent";
 
 //assets
-import about from "../assets/images/Home/about.png";
+import about from "../assets/images/Home/about.webP";
 
-export function About() {
+export default function About() {
   const { t } = useTranslation(["about", "buttons"]);
   const container = {
     bgImage: `url(${about})`,

@@ -7,37 +7,53 @@ import { CardSection } from "../layout/CardSection";
 import { CardsContainer } from "../components/CardsContainer";
 import { CompanyCard } from "../components/cards/CompanyCard";
 import { CollaboratorsCard } from "../components/cards/CollaboratorsCard";
-import Buttons from "../components/Buttons";
 //assets
-import network from "../assets/images/Home/network.png";
-import background from "../assets/images/Network/background.jpg";
-import euro4business from "../assets/images/Network/e4b.png";
+import network from "../assets/images/Home/network.webP";
+import background from "../assets/images/Network/background.webP";
+import euro4business from "../assets/images/Network/e4b.webP";
 import quartoTempo from "../assets/images/Network/Quartotempo.webp";
-import sis from "../assets/images/Network/sis.png";
-import zinev from "../assets/images/Network/zinev.jpg";
-import cubufo from "../assets/images/Network/Cubufo.png";
-import coll1 from "../assets/images/Network/coll1.jpg";
-import coll2 from "../assets/images/Network/coll2.jpg";
+import sis from "../assets/images/Network/sis.webP";
+import zinev from "../assets/images/Network/zinev.webP";
+import cubufo from "../assets/images/Network/Cubufo.webP";
+import coll1 from "../assets/images/Network/coll1.webP";
+import coll2 from "../assets/images/Network/coll2.webP";
 
-export function Network() {
+export default function Network() {
   const { t } = useTranslation("network");
 
   const companiesData = [
-    { src: euro4business, link: "https://www.e4business.eu/" },
-    { src: quartoTempo, link: "https://www.quartotempofirenze.it/" },
-    { src: sis, link: "https://sinnovations.org/" },
-    { src: zinev, link: "https://zatbg.org/" },
-    { src: cubufo, link: "https://cubufo.cubufoundation.com/" },
+    {
+      src: euro4business,
+      link: "https://www.e4business.eu/",
+      alt: "Europe For Business logo",
+    },
+    {
+      src: quartoTempo,
+      link: "https://www.quartotempofirenze.it/",
+      alt: "Quarto Tempo logo",
+    },
+    { src: sis, link: "https://sinnovations.org/", alt: "SITES logo" },
+    {
+      src: zinev,
+      link: "https://zatbg.org/",
+      alt: "ZINEV ART TECHNOLOGIES logo",
+    },
+    {
+      src: cubufo,
+      link: "https://cubufo.cubufoundation.com/",
+      alt: "CUBUFO logo",
+    },
   ];
 
   const collaboratorsData = [
     {
       image: coll1,
-      name: "Aevin Eslami",
+      name: "Arvin Eslami",
       role: t("arvin_role"),
       story: t("arvin_story"),
       interests: t("arvin_interests"),
       linkedin: "https://www.linkedin.com/in/arvin-eslami/?locale=en_US",
+      alt: "Fotod el collaboratore Aevin Eslami",
     },
     {
       image: coll2,
@@ -46,6 +62,7 @@ export function Network() {
       story: t("biscione_story"),
       interests: t("biscione_interests"),
       linkedin: "https://www.linkedin.com/in/alessandro-biscione/",
+      alt: "Fotod el collaboratore Alessandro Biscione",
     },
   ];
 

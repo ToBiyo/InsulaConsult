@@ -1,4 +1,4 @@
-import { Flex, Link, textDecoration } from "@chakra-ui/react";
+import { Flex, Link, Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -33,8 +33,8 @@ export default function Buttons({ path, contact, primary }) {
         </Link>
       )}
       {path && (
-        <NavLink to={"/InsulaConsult/" + path}>
-          <Link sx={button}>{t("see_more_btn")}</Link>
+        <NavLink to={"/" + path}>
+          <Button sx={button}>{t("see_more_btn")}</Button>
         </NavLink>
       )}
     </Flex>

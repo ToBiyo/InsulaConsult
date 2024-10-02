@@ -23,7 +23,7 @@ export function ServicesDetails({ data, inverted }) {
 
     ":after": {
       content: '" "',
-      m: "10px 0 0 0",
+      m: { base: "10px auto", lg: "10px 0 0 0" },
       width: "200px",
       display: "block",
       h: "5px",
