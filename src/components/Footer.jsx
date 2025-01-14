@@ -50,7 +50,7 @@ export const Footer = () => {
     alignItems: "center",
   };
   const pageHeadings = {
-    color: "orange.400",
+    color: "secondary",
     fontSize: { base: "1.6rem", md: "2rem" },
     marginBottom: "30px",
     fontFamily: "heading",
@@ -127,7 +127,7 @@ export const Footer = () => {
             </Flex>
             <Flex sx={iconContainer}>
               <a
-                href="mailto:fabio.web.arru@gmail.com"
+                href="mailto:infoservice.insulac@gmail.com"
                 style={{ margin: 0, padding: "0" }}
               >
                 <Flex sx={iconContainer}>

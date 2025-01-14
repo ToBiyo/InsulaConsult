@@ -37,7 +37,7 @@ export function LanguageSwitch({ color, onClickHandler }) {
     display: "flex",
     gap: "5px",
     ":hover": {
-      bg: "orange.400",
+      bg: "secondary",
       border: "none",
     },
   };

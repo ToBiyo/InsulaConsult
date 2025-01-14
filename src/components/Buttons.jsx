@@ -9,7 +9,7 @@ export default function Buttons({ path, contact, primary }) {
     gap: "30px",
   };
   const button = {
-    bg: primary ? "primary" : "orange.400",
+    bg: primary ? "primary" : "secondary",
     color: "#fff",
     fontSize: "1.1rem",
     h: "50px",
@@ -22,13 +22,13 @@ export default function Buttons({ path, contact, primary }) {
     cursor: "pointer",
     ":hover": {
       textDecoration: "none",
-      bg: primary ? "blue.800" : "orange.300",
+      bg: primary ? "blue.800" : "orange.500",
     },
   };
   return (
     <Flex sx={buttonsContainer}>
       {!contact && (
-        <Link sx={button} href={"mailto:arrufabio93@gmail.com"}>
+        <Link sx={button} href={"mailto:infoservice.insulac@gmail.com"}>
           {t("get_in_touch_btn")}
         </Link>
       )}

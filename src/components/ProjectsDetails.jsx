@@ -16,8 +16,8 @@ export const ProjectsDetails = ({ data, inverted }) => {
     margin: "0 10%",
   };
   const title = {
-    fontSize: { base: "1.3rem", md: "1.9rem" },
-    color: inverted ? "primary" : "orange.400",
+    fontSize: { base: "1.3rem", md: "1.8rem" },
+    color: inverted ? "primary" : "secondary",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
     fontWeight: "400",
@@ -34,7 +34,8 @@ export const ProjectsDetails = ({ data, inverted }) => {
     borderRadius: "50%",
     display: "block",
     position: "relative",
-    border: "2px solid orange",
+    border: inverted ? "2px solid" : "none",
+    borderColor: "secondary",
   };
   const logoImage = {
     position: "absolute",

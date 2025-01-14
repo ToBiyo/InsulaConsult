@@ -13,17 +13,18 @@ export const CollaboratorsCard = ({ data, i }) => {
     gap: "20px",
   };
   const nameHeading = {
-    color: "orange",
+    color: "#fff",
     fontSize: { base: "1.6rem", md: "1.8rem" },
+    borderBottom: "2px solid",
+    borderColor: "secondary",
   };
   const roleHeading = {
     color: "#fff",
     fontFamily: "heading",
     fontWeight: "normal",
     fontSize: { base: "1.2rem", md: "1.4rem" },
-    borderBottom: "2px solid",
+
     padding: "5px 0",
-    borderColor: "orange.400",
   };
   const imageContainer = {
     width: { base: "200px", md: "250px" },
@@ -40,15 +41,16 @@ export const CollaboratorsCard = ({ data, i }) => {
   const text = {
     color: "#fff",
     textAlign: "center",
+
     fontSize: { base: "0.9rem", md: "1rem" },
     fontFamily: "body",
   };
 
   const socialLink = {
     fontSize: "45px",
-    color: "#fff",
+    color: "secondary",
     ":hover": {
-      color: "orange.300",
+      color: "blue.300",
     },
   };
   return (

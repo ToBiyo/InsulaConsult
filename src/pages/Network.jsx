@@ -79,7 +79,7 @@ export default function Network() {
   const title = {
     fontSize: { base: "3.5rem", md: "4.5rem" },
     alignSelf: "center",
-    color: "orange.400",
+    color: "secondary",
     fontFamily: "title",
     marginBottom: "50px",
     fontWeight: "normal",

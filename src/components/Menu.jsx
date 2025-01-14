@@ -23,7 +23,7 @@ export default function Menu({ onHideMenu, footerMenu }) {
     margin: { base: "0px 0", md: 0 },
     outline: "none",
     ":hover": {
-      bg: !footerMenu ? "orange.400" : "none",
+      bg: !footerMenu ? "secondary" : "none",
       color: !footerMenu ? "#fff" : "orange.400",
     },
   };

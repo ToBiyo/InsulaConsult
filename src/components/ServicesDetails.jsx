@@ -20,14 +20,13 @@ export function ServicesDetails({ data, inverted }) {
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
     fontWeight: "400",
-
     ":after": {
       content: '" "',
       m: { base: "10px auto", lg: "10px 0 0 0" },
       width: "200px",
       display: "block",
       h: "5px",
-      bg: "orange.400",
+      bg: "secondary",
     },
   };
   const subserviceContainer = {
@@ -35,13 +34,12 @@ export function ServicesDetails({ data, inverted }) {
     flexDir: "column",
     padding: "10px 0",
     gap: "10px",
-
     borderBottom: "1px dotted orange",
   };
   const subHeading = {
     fontSize: { base: "1.3rem", md: "1.8rem" },
     fontWeight: "600",
-    color: "orange.400",
+    color: "secondary",
     textAlign: { base: "center", lg: "left" },
     fontFamily: "title",
   };
@@ -50,6 +48,7 @@ export function ServicesDetails({ data, inverted }) {
     fontSize: { base: "1rem", md: "1.2rem" },
     textAlign: { base: "center", lg: "left" },
     fontFamily: "text",
+    fontWeight: "400",
   };
 
   return (

@@ -13,7 +13,7 @@ export function CardSection({ heading, children, path, contact, primary }) {
   };
   const title = {
     fontSize: { base: "3.5rem", lg: "4.5rem" },
-    color: primary ? "primary" : "orange.400",
+    color: primary ? "primary" : "secondary",
     fontFamily: "title",
     fontWeight: "400",
   };

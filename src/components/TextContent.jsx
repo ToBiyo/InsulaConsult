@@ -17,7 +17,7 @@ export default function TextContent({
     alignItems: { base: "center", md: "flex-start" },
   };
   const textHeading = {
-    color: inverted ? "primary" : "orange.400",
+    color: inverted ? "primary" : "secondary",
     fontSize: { base: "3.5rem", lg: "4.5rem" },
     fontWeight: "400",
     fontFamily: "title",
