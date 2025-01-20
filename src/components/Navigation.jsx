@@ -55,7 +55,7 @@ export default function Navigation() {
 
   return (
     <Flex as={"nav"} sx={navigationContainer}>
-      <NavLink to="/InsulaConsult/">
+      <NavLink to="/">
         <Image src={logo} sx={logoImage} alt="Insula Consult logo" />
       </NavLink>
       <Flex sx={menuContainer}>

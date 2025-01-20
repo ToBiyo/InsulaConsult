@@ -1,5 +1,5 @@
 //chakra
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text, Image } from "@chakra-ui/react";
 //font awesome
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,9 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import logo from "../assets/images/logo.svg";
 
 export const Footer = () => {
   const { t } = useTranslation();
@@ -57,12 +59,12 @@ export const Footer = () => {
     fontWeight: "normal",
     textAlign: "center",
   };
-  const contactsContainer = {
+  const socialContainer = {
     flexDirection: "column",
     alignItems: "center",
   };
   const contacts_box = {
-    flexDir: { base: "column", md: "row", lg: "column" },
+    flexDir: { base: "column" },
     gap: "20px",
     alignItems: "center",
   };
@@ -98,8 +100,8 @@ export const Footer = () => {
             <Menu footerMenu={true} />
           </Flex>
         </Flex>
-        <Flex sx={contactsContainer}>
-          <Heading sx={pageHeadings}>Contacts</Heading>
+        <Flex sx={socialContainer}>
+          <Heading sx={pageHeadings}>Socials</Heading>
           <Flex sx={contacts_box}>
             <Flex sx={iconContainer}>
               <a
@@ -125,6 +127,16 @@ export const Footer = () => {
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
             </Flex>
+          </Flex>
+        </Flex>
+        <Flex sx={socialContainer}>
+          <Heading sx={pageHeadings}>Contacts</Heading>
+          <Flex sx={contacts_box}>
+            <Flex sx={iconContainer}>
+              <a href="tel:+393479424527">
+                <FontAwesomeIcon icon={faPhone} />
+              </a>
+            </Flex>
             <Flex sx={iconContainer}>
               <a
                 href="mailto:infoservice.insulac@gmail.com"
@@ -139,7 +151,11 @@ export const Footer = () => {
         </Flex>
       </Flex>
       <Flex sx={copyrightContainer}>
-        Copyright © 2023 Insula Consult. Tutti i diritti riservati.
+        <Image src={logo} width={"50px"}></Image>
+        <p>
+          Insula Consulting - Vico III Carbonia, 12, 09010, Narcao (SU), Italia
+          - P.IVA IT03852740921
+        </p>
       </Flex>
     </Flex>
   );
