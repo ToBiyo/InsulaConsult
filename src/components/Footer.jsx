@@ -13,7 +13,7 @@ import logo from "../assets/images/logo.svg";
 
 export const Footer = () => {
   const { t } = useTranslation();
-  const Container = {
+  const Footer = {
     w: "100%",
     minHeight: "auto",
     bg: "primary",
@@ -36,7 +36,7 @@ export const Footer = () => {
     padding: "100px 0",
     gap: { base: "40px" },
   };
-  const quickLinksContainer = {
+  const footerColumn = {
     maxWidth: { base: "100%", md: "30%" },
     flexDirection: "column",
     justifyContent: "center",
@@ -63,7 +63,7 @@ export const Footer = () => {
     flexDirection: "column",
     alignItems: "center",
   };
-  const contacts_box = {
+  const footerBox = {
     flexDir: { base: "column" },
     gap: "20px",
     alignItems: "center",
@@ -86,23 +86,31 @@ export const Footer = () => {
       color: "orange.300",
     },
   };
+  const contactsContainer = {
+    fontSize: "1.3rem",
+    gap: "3",
+    alignItems: "center",
+  };
+  const contactsIcon = {
+    cursor: "pointer",
+    ":hover": {
+      color: "orange.300",
+    },
+    fontSize: "1.6rem",
+  };
 
   return (
-    <Flex sx={Container} as={"footer"}>
+    <Flex sx={Footer} as={"footer"}>
       <Flex sx={footerContainer}>
-        <Flex sx={quickLinksContainer}>
-          <Heading sx={pageHeadings}>{t("home_head_title")}</Heading>
-          <Text>{t("home_head_description")}</Text>
-        </Flex>
-        <Flex sx={quickLinksContainer}>
+        <Flex sx={footerColumn}>
           <Heading sx={pageHeadings}>Quick Links</Heading>
           <Flex sx={linkContainer}>
             <Menu footerMenu={true} />
           </Flex>
         </Flex>
-        <Flex sx={socialContainer}>
+        <Flex sx={footerColumn}>
           <Heading sx={pageHeadings}>Socials</Heading>
-          <Flex sx={contacts_box}>
+          <Flex sx={footerBox}>
             <Flex sx={iconContainer}>
               <a
                 href="https://www.linkedin.com/in/matteo-curreli-b15562153/"
@@ -129,23 +137,27 @@ export const Footer = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex sx={socialContainer}>
+        <Flex sx={footerColumn}>
           <Heading sx={pageHeadings}>Contacts</Heading>
-          <Flex sx={contacts_box}>
-            <Flex sx={iconContainer}>
-              <a href="tel:+393479424527">
-                <FontAwesomeIcon icon={faPhone} />
-              </a>
+          <Flex sx={footerBox}>
+            <Flex sx={contactsContainer}>
+              <Flex sx={contactsIcon}>
+                <a href="tel:+393479424527">
+                  <FontAwesomeIcon icon={faPhone} />
+                </a>
+              </Flex>
+              <Text>+393479424527</Text>
             </Flex>
-            <Flex sx={iconContainer}>
-              <a
-                href="mailto:infoservice.insulac@gmail.com"
-                style={{ margin: 0, padding: "0" }}
-              >
-                <Flex sx={iconContainer}>
+            <Flex sx={contactsContainer}>
+              <Flex sx={contactsIcon}>
+                <a
+                  href="mailto:infoservice.insulac@gmail.com"
+                  style={{ margin: 0, padding: "0" }}
+                >
                   <FontAwesomeIcon icon={faEnvelope} />
-                </Flex>
-              </a>
+                </a>
+              </Flex>
+              <Text>infoservice.insulac@gmail.com</Text>
             </Flex>
           </Flex>
         </Flex>
